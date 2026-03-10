@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@500&display=swap');
-
+body {
+    padding-top: 64px;
+}
 :root {
     --bg: #0a0c0a;
     --surface: rgba(255,255,255,0.03);
@@ -12,8 +14,10 @@
 
 /* ── NAVBAR CONTAINER ── */
 .navbar-container {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     padding: 0 clamp(1.5rem, 4vw, 4rem);
     background: rgba(18, 167, 18, 0.72);
