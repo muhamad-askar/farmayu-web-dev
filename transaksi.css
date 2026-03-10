@@ -1,0 +1,48 @@
+body {
+  background-color: gray ;
+}
+.bar {
+  padding: 15px;
+  background-color: white;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+}
+.bar2{
+  margin-left: 15px;
+}
+.list{
+  margin-top: 30px;
+   padding:15px;
+  background-color: white;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+}
+.list1{
+  margin-left: 2cm;
+}
+.list2{
+  margin-left: 12cm;
+}
+.list3{
+  margin-left:2cm;
+}
+.list4{
+  margin-left: 5cm;
+}
+
+
+.produk{
+  margin-top: 40px;
+  padding-bottom: auto;
+  background-color: black;
+   margin-left: 15px;
+  margin-right: 15px;
+}
+.produk1{
+  background-color: white;
+  margin-bottom: 30px;
+  display: flex;
+  padding-bottom: 300px;
+}
