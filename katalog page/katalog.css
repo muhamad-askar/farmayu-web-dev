@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@500&display=swap');
 *{
     margin: 0; padding: 0;
     box-sizing: border-box;
@@ -9,6 +10,7 @@ html{
 html,body{
     max-width: 100%; height: 100%;
     background-color: rgb(254, 251, 231);
+    font-family: 'DM Sans';
 }
 
 /*section-1*/
@@ -30,9 +32,10 @@ html,body{
 }
 .card{
     position: relative;
-    width: 250px; height: 350px;
-    background: aqua;
+    width: 220px; height: auto; padding-bottom: 20px;
+    background: white; border-radius: 5px;
     overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 .content-default{
     display: flex; flex-direction: column;
@@ -50,7 +53,7 @@ html,body{
     width: 100%; height: 100%;
     padding: 25px;
     display: flex; flex-direction: column;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
 
     opacity: 0;
     transition: 0.3s ease;
@@ -63,7 +66,11 @@ html,body{
 }
 .card-btn{
     position: absolute;
-    bottom: 20px;
+    bottom: 20px; left: 50%; transform: translateX(-50%);
+    padding: 5px 15px; border-radius: 5px;
+    background-color:aliceblue ;
+
+    text-decoration: none;
 }
 .card:hover .content-hover{
     opacity: 1;
