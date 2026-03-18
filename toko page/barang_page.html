@@ -30,10 +30,23 @@
         <section class="section-1">
             <div class="path">
                 <a href="../home.html">Home</a>
-                <a href="../katalog page/katalog_tanaman.html">/ Katalog</a>
+                <a href="javascript:history.back()" class="btn-back" id="dynamic-katalog">Katalog</a>
                 <a href="barang_page.html">/ Barang XXX</a>
             </div>
         </section>
     </main>
+    <script>
+    //ambil data dari URL (misal: ?name=Katalog%20A)
+    const urlParams = new URLSearchParams(window.location.search);
+    const namaKatalog = urlParams.get('name'); // Isinya bakal "Katalog A"
+
+    // 2. Cari elemen breadcrumb tadi
+    const breadcrumbLink = document.getElementById('dynamic-katalog');
+
+    // 3. Kalau datanya ada, ganti tulisannya!
+    if (namaKatalog) {
+        breadcrumbLink.innerText = namaKatalog;
+    }
+</script>
 </body>
 </html>
