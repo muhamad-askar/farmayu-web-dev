@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Playfair+Display:wght@500&display=swap');
 *{
     margin: 0; padding: 0;
     box-sizing: border-box;
@@ -8,33 +9,69 @@ html{
 }
 html,body{
     max-width: 100%; height: 100%;
+    background-color: rgb(254, 251, 231);
+    font-family: 'DM Sans';
 }
 
-/*header*/
-header{
-    height: 75px; width: 100%;
-}
-.navbar{
-    position: fixed;
-    top: 15px; left: 75px; right: 75px;
-    z-index: 999;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background-color: aqua;
-    border-radius: 10px;
-}
-.nav-links a{
-    text-decoration: none;
-}
-
-/*section*/
+/*section-1*/
 .path{
-    background-color: aqua;
-    margin: 0px 18px 18px;
+    background-color: white;
+    padding: 10px;
+    margin: 30px 0px 30px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
 }
 .path a{
+    margin-left: 10px;
     text-decoration: none;
+}
+/*section-2*/
+.card-parent{
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    row-gap: 70px;
+    padding: 20px;
+}
+.card{
+    position: relative;
+    width: 220px; height: auto; padding-bottom: 20px;
+    background: white; border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.content-default{
+    display: flex; flex-direction: column;
+    margin: 30px 30px 0px;
+}
+.content-default img{
+    width: 100%;
+    aspect-ratio: 1/1; object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+}
+.content-hover{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    padding: 25px;
+    display: flex; flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+
+    opacity: 0;
+    transition: 0.3s ease;
+}
+.info-hover{
+    color: aliceblue;
+}
+.info-hover h3{
+    margin-bottom: 5px;
+}
+.card-btn{
+    position: absolute;
+    bottom: 20px; left: 50%; transform: translateX(-50%);
+    padding: 5px 15px; border-radius: 5px;
+    background-color:aliceblue ;
+
+    text-decoration: none;
+}
+.card:hover .content-hover{
+    opacity: 1;
 }

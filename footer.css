@@ -1,0 +1,138 @@
+.footer-full {
+  background: linear-gradient(150deg, #1a4d2e 0%, #0f3320 100%);
+  width: 100%;
+  padding: 60px 0 44px;
+  position: relative;
+  overflow: hidden;
+}
+ 
+.footer-full::before {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(76,175,125,0.08);
+  pointer-events: none;
+}
+ 
+.footer-content {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+ 
+.footer-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+ 
+.footer-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+ 
+.footer-form h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 14px;
+  text-transform: capitalize;
+}
+ 
+.footer-form input {
+  display: block;
+  width: 100%;
+  padding: 11px 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 10px;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.87rem;
+  margin-bottom: 10px;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+ 
+.footer-form input::placeholder {
+  color: rgba(255,255,255,0.42);
+}
+ 
+.footer-form input:focus {
+  border-color: #84c43b;
+}
+ 
+.btn-kirim {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #f5a623;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease;
+  margin-top: 4px;
+}
+ 
+.btn-kirim:hover {
+  background: #c47e0e;
+  transform: translateY(-1px);
+}
+ 
+.footer-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(255,255,255,0.12);
+  margin: 0 8px;
+}
+ 
+.footer-right {
+  flex: 1;
+}
+ 
+.footer-right h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+ 
+.footer-right ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+ 
+.footer-right ul li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255,255,255,0.75);
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: color 0.22s ease;
+}
+ 
+.footer-right ul li:hover {
+  color: #f5a623;
+}
+ 
+.contact-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: brightness(0) invert(1) opacity(0.65);
+}
