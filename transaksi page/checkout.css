@@ -1,11 +1,23 @@
 body {
   background-color: #EBE1D1;
 }
+.bar {
+  padding: 4px 15px;
+  background-color: white;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+}
+.ikon img {margin-left: 0px;}
 
+.bar2{
+  margin-left: 20px;
+}
 .box {
   background-color: white;
   margin :30px 15px;
-  padding: 30px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -14,7 +26,6 @@ body {
 .area-atas {
   display: flex;
   justify-content: space-between;
- align-items: flex-start;
 }
 
 .kiri-atas {
@@ -22,9 +33,27 @@ body {
   gap: 20px;
 }
 
+.gambar {
+  width: 140px;
+  height: 140px;
+  border: 1px solid black;
+}
+
+.info-produk h2 {
+margin: 0 0 10px 0;
+font-size: 22px;
+}
+
+.info-produk p {
+  margin: 0;
+  font-size: 16px;
+}
+
 .kanan-atas {
   display: flex;
-  gap: 50px;
+  gap: 60px;
+  align-items: flex-end;
+  height: 140px;
   font-size: 16px;
 }
 
@@ -44,8 +73,10 @@ body {
 .tombol-pilihan {
   background-color: transparent;
   border: 1px solid black;
-  padding: 5px 15px;
-  width: 150px;
+  padding: 5px 0;
+  width: 160px;
+  text-align: center;
+  font-size: 14px;
   cursor: pointer;
 }
 
@@ -58,13 +89,15 @@ body {
 
 .kiri-bawah {
   max-width: 300px;
+  margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .kanan-bawah {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 10px;
+  gap: 15px;
   min-width: 250px;
 }
 
@@ -72,13 +105,28 @@ body {
   display:flex;
   justify-content: space-between;
   width: 100%;
+  font-size: 16px;
 }
 
 .rincian2 {
+  display: flex;
   margin-bottom: 10px;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 16px;
+
 }
 
 .tombol-bayar {
+  background-color: #8bb6ec;
+  color: white;
+  border: none;
   width: 100%;
-  padding: 10px 0;
+  padding: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.tombol-bayar:hover {
+  background-color: #6a9ce0;
 }
