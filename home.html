@@ -10,121 +10,159 @@
 <body>
 
 <div id="navbar-placeholder"></div>
-    <section class="hero-full">
-        <div class="hero">
-            <input type="radio" name="slider" id="s1" checked>
-            <div class="slides">
-                <div class="slide">
-                    <div class="overlay"></div>
-                    <img src="images.jpg" alt="Sawit">
-                    <div class="hero-text">
-                        <h1>Aku Nak<br>Sawit Sawit tu</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                        <button class="btn-start">ayo mulai</button>
-                    </div>
-                </div>
-            </div>
-            <div class="dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-            </div>
-        </div>
-    </section>
 
-    <section class="container">
-        <div class="categories">
-            <div class="cat-card">
-                <img src="pupuk.png" alt="Pupuk">
-                <span>Pupuk</span>
-            </div>
-            <div class="cat-card">
-                <img src="benih.png" alt="Benih">
-                <span>Benih</span>
-            </div>
-            <div class="cat-card">
-                <img src="tanaman.png" alt="Tanaman">
-                <span>Tanaman</span>
-            </div>
-            <div class="cat-card">
-                <img src="alat.png" alt="Alat">
-                <span>Alat</span>
-            </div>
+<section class="hero-full">
+  <div class="hero">
+    <div class="slides" id="slides">
+      <div class="slide active">
+        <div class="overlay"></div>
+        <img src="/asset_foto/background/vlad-stawizki-CQbaooHFSWQ-unsplash.jpg" alt="Sawit">
+        <div class="hero-text">
+          <span class="hero-label">Kebun Sawit</span>
+          <h1>Aku Nak<br>Sawit Sawit tu</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+          <button class="btn-start">Ayo Mulai</button>
         </div>
-    </section>
+      </div>
+      <div class="slide">
+        <div class="overlay"></div>
+        <img src="/asset_foto/background/9c83d1b0bdffe56bf02aa798bfcc0118.jpg" alt="Slide 2">
+        <div class="hero-text">
+          <span class="hero-label">jawa disikat batak</span>
+          <h1>Tumbuh<br>Bersama prabowo</h1>
+          <p>bokep prabowo x jokowi</p>
+          <button class="btn-start">omke gams</button>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="overlay"></div>
+        <img src="/asset_foto/background/slide3.jpg" alt="Slide 3">
+        <div class="hero-text">
+          <span class="hero-label">bingungbjir</span>
+          <h1>jewkowi<br>pragoyim</h1>
+          <p>Pupuk, benih, dan alat tani pilihan para ahli</p>
+          <button class="btn-start">Lihat Produk</button>
+        </div>
+      </div>
+      <div class="slide">
+        <div class="overlay"></div>
+        <img src="/asset_foto/background/slide4.jpg" alt="Slide 4">
+        <div class="hero-text">
+          <span class="hero-label">prabogoyim</span>
+          <h1>Bareng<br>nyawit</h1>
+          <p>gamskan ga sih smlur demi ppapi trump tercinta</p>
+          <button class="btn-start">Gabung Sekarang</button>
+        </div>
+      </div>
+    </div>
 
-    <section class="nyawit-full">
-        <div class="container">
-            <div class="nyawit-header">
-                <h2>InTani, siap mendampingin nyawit</h2>
-                <p>Ayo mulai nyawit</p>
-            </div>
-        <div class="nyawit-wrapper">
+    <button class="hero-btn hero-prev" id="heroPrev">&#8592;</button>
+    <button class="hero-btn hero-next" id="heroNext">&#8594;</button>
  
-            <div class="paket-box p-kiri">
-                <div class="img-container"><img src="paket1.jpg" onerror="this.parentElement.innerHTML='🌱'"></div>
-                    <div class="paket-info">
-                        <h3>paket mula</h3>
-                            <ul><li>data 1</li><li>data 2</li><li>data 3</li><li>data 4</li></ul>
-                </div>
-        <span class="paket-badge">Basic</span>
+    <div class="dots" id="heroDots">
+      <button class="dot active"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+      <button class="dot"></button>
+    </div>
+  </div>
+</section>
+
+<section class="container cat-section">
+  <div class="categories">
+    <div class="cat-card">
+      <div class="cat-icon">🌿</div>
+      <span>Pupuk</span>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🌾</div>
+      <span>Benih</span>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🌱</div>
+      <span>Tanaman</span>
+    </div>
+    <div class="cat-card">
+      <div class="cat-icon">🔧</div>
+      <span>Alat</span>
+    </div>
+  </div>
+</section>
+ 
+<section class="nyawit-full">
+  <div class="container">
+    <div class="nyawit-header">
+      <span class="section-label">Paket Langganan</span>
+      <h2>InTani, siap mendampingin nyawit</h2>
+      <p>Pilih paket yang sesuai dengan kebutuhan kebunmu</p>
+    </div>
+ 
+    <div class="nyawit-wrapper">
+ 
+      <div class="paket-box modal-right">
+        <div class="img-container"><img src="paket1.jpg" onerror="this.parentElement.innerHTML='🌱'"></div>
+        <div class="paket-info">
+          <h3>Paket Mula</h3>
+          <ul><li>data 1</li><li>data 2</li><li>data 3</li><li>data 4</li></ul>
+        </div>
+        <span class="paket-badge badge-teal">Basic</span>
         <div class="hover-modal">
-          <div class="modal-thumb">🌱</div>
-          <div class="modal-body">
-            <h4>paket mula</h4>
-            <p>Cocok buat kamu yang baru mulai. esensial, harga ramah di kantong.</p>
+          <div class="modal-thumb thumb-teal">🌱</div>
+          <div class="modal-body border-teal">
+            <h4>Paket Mula</h4>
+            <p>Cocok buat kamu yang baru mulai. Esensial, harga ramah di kantong.</p>
             <div class="modal-price-row">
-              <span class="modal-price">Rp 67k</span>
+              <span class="modal-price price-teal">Rp 67k</span>
               <span class="modal-per">/ bulan</span>
             </div>
-            <ul class="modal-list">
+            <ul class="modal-list list-teal">
               <li>data 1</li><li>data 2</li><li>data 3</li><li>data 4</li>
             </ul>
           </div>
         </div>
       </div>
  
-      <div class="paket-box p-kanan">
+
+      <div class="paket-box modal-left">
         <div class="img-container"><img src="paket2.jpg" onerror="this.parentElement.innerHTML='🌿'"></div>
         <div class="paket-info">
-          <h3>paket kembang</h3>
+          <h3>Paket Kembang</h3>
           <ul><li>data 1</li><li>data 2</li><li>data 3</li><li>data 4</li></ul>
         </div>
-        <span class="paket-badge">Populer</span>
+        <span class="paket-badge badge-purple">Populer</span>
         <div class="hover-modal">
-          <div class="modal-thumb">🌿</div>
-          <div class="modal-body">
-            <h4>paket kembang</h4>
-            <p>joke owie.</p>
+          <div class="modal-thumb thumb-purple">🌿</div>
+          <div class="modal-body border-purple">
+            <h4>Paket Kembang</h4>
+            <p>Untuk kamu yang sudah mulai berkembang dan butuh lebih.</p>
             <div class="modal-price-row">
-              <span class="modal-price">Rp 67k</span>
+              <span class="modal-price price-purple">Rp 157k</span>
               <span class="modal-per">/ bulan</span>
             </div>
-            <ul class="modal-list">
+            <ul class="modal-list list-purple">
               <li>data 1</li><li>data 2</li><li>data 3</li><li>data 4</li>
             </ul>
           </div>
         </div>
       </div>
  
-      <div class="paket-box p-kiri">
+      <div class="paket-box modal-right">
         <div class="img-container"><img src="paket3.jpg" onerror="this.parentElement.innerHTML='🌳'"></div>
         <div class="paket-info">
-          <h3>paket usaha</h3>
+          <h3>Paket Usaha</h3>
           <ul><li>data 1</li><li>data 2</li><li>data 3</li><li>data 4</li></ul>
         </div>
-        <span class="paket-badge">Pro</span>
+        <span class="paket-badge badge-amber">Pro</span>
         <div class="hover-modal">
-          <div class="modal-thumb">🌳</div>
-          <div class="modal-body">
-            <h4>paket usaha</h4>
-            <p>Untuk bisnis yang serius. raja sawit, dedicated farmer, tanpa batas.</p>
+          <div class="modal-thumb thumb-amber">🌳</div>
+          <div class="modal-body border-amber">
+            <h4>Paket Usaha</h4>
+            <p>Untuk bisnis yang serius. Raja sawit, dedicated farmer, tanpa batas.</p>
             <div class="modal-price-row">
-              <span class="modal-price">Rp 670k</span>
+              <span class="modal-price price-amber">Rp 670k</span>
               <span class="modal-per">/ bulan</span>
             </div>
-            <ul class="modal-list">
+            <ul class="modal-list list-amber">
               <li>data 1</li><li>data 2</li><li>data 3</li><li>data 4</li>
             </ul>
           </div>
@@ -134,37 +172,72 @@
     </div>
   </div>
 </section>
-
-    <section class="container tips-section">
-        <h2>bimo nak bagi tips</h2>
-        <div class="tips-container">
-            <div class="tips-card">
-                <div class="tips-img"><img src="tips1.jpg"></div>
-                <div class="tips-content"><h3>kenapa sawit bagus</h3><p>Lorem ipsum dolor sit amet...</p></div>
-            </div>
-            <div class="tips-card">
-                <div class="tips-img"><img src="tips2.jpg"></div>
-                <div class="tips-content"><h3>kenapa sawit bagus</h3><p>Lorem ipsum dolor sit amet...</p></div>
-            </div>
-            <div class="tips-card">
-                <div class="tips-img"><img src="tips3.jpg"></div>
-                <div class="tips-content"><h3>kenapa sawit bagus</h3><p>Lorem ipsum dolor sit amet...</p></div>
-            </div>
+ 
+<section class="tips-full">
+  <div class="container tips-section">
+    <div class="tips-header">
+      <span class="section-label">Tips & Edukasi</span>
+      <h2>Bimo nak bagi tips</h2>
+    </div>
+    <div class="tips-container">
+      <div class="tips-card">
+        <div class="tips-img"><img src="tips1.jpg" alt="tips"></div>
+        <div class="tips-content">
+          <span class="tips-tag">Pertanian</span>
+          <h3>Kenapa sawit bagus</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+          <a href="#" class="tips-link">Baca selengkapnya →</a>
         </div>
-    </section>
-
-   <div id="footer-placeholder"></div>
+      </div>
+      <div class="tips-card">
+        <div class="tips-img"><img src="tips2.jpg" alt="tips"></div>
+        <div class="tips-content">
+          <span class="tips-tag">Nutrisi</span>
+          <h3>Kenapa sawit bagus</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+          <a href="#" class="tips-link">Baca selengkapnya →</a>
+        </div>
+      </div>
+      <div class="tips-card">
+        <div class="tips-img"><img src="tips3.jpg" alt="tips"></div>
+        <div class="tips-content">
+          <span class="tips-tag">Panen</span>
+          <h3>Kenapa sawit bagus</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
+          <a href="#" class="tips-link">Baca selengkapnya →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<div id="footer-placeholder"></div>
+ 
 <script>
-   fetch('navigation.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('navbar-placeholder').innerHTML = data;
-    });
-     fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-    });
+  fetch('navigation.html').then(r=>r.text()).then(d=>document.getElementById('navbar-placeholder').innerHTML=d);
+  fetch('footer.html').then(r=>r.text()).then(d=>document.getElementById('footer-placeholder').innerHTML=d);
+ 
+  const slides = document.querySelectorAll('.slide');
+  const dots   = document.querySelectorAll('#heroDots .dot');
+  let cur = 0, timer;
+ 
+  function goTo(i) {
+    slides[cur].classList.remove('active');
+    dots[cur].classList.remove('active');
+    cur = (i + slides.length) % slides.length;
+    slides[cur].classList.add('active');
+    dots[cur].classList.add('active');
+  }
+ 
+  function startAuto() { timer = setInterval(() => goTo(cur + 1), 5000); }
+  function resetAuto()  { clearInterval(timer); startAuto(); }
+ 
+  document.getElementById('heroNext').onclick = () => { goTo(cur + 1); resetAuto(); };
+  document.getElementById('heroPrev').onclick = () => { goTo(cur - 1); resetAuto(); };
+  dots.forEach((d, i) => d.onclick = () => { goTo(i); resetAuto(); });
+ 
+  startAuto();
 </script>
 </body>
 </html>
+ 
