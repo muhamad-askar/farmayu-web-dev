@@ -1,61 +1,110 @@
-*{
-    margin: 0; padding: 0;
+/* Reset Dasar */
+* {
     box-sizing: border-box;
-}
-html{
-    scroll-behavior: smooth; overscroll-behavior: none;
-    overflow-x: hidden;
-}
-html,body{
-    max-width: 100%; height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*header*/
-header{
-    height: 75px; width: 100%;
+body {
+    background-color: #f0e6d6; /* Warna krem background */
 }
-.navbar{
-    position: fixed;
-    top: 15px; left: 75px; right: 75px;
-    z-index: 999;
-    
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Navbar Minimalis */
+.navbar {
+    background: white;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.nav-content { display: flex; justify-content: space-between; align-items: center; }
+.search-bar input { border-radius: 15px; border: 1px solid #ccc; padding: 5px 15px; }
+
+/* Pathbar */
+.pathbar {
+    background: white;
+    padding: 8px 15px;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+/* Store Header */
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 20px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
-    background-color: aqua;
-    border-radius: 10px;
-}
-.nav-links a{
-    text-decoration: none;
+    gap: 20px;
 }
 
-/*section-1*/
-.path{
-    background-color: aqua;
-    margin: 0px 18px 18px;
-}
-.path a{
-    text-decoration: none;
-}
-.box{
-    background-color: aqua;
-    margin: 0px 18px 18px;
-    padding-bottom: 80px;
-}
-.box-content {
+.store-avatar-circle {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #333;
+    border-radius: 50%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
 }
-.box-content img{
-    margin: 10px 10px 0px;
+
+.store-details h1 { font-size: 22px; text-transform: lowercase; }
+.store-details p { font-size: 14px; color: #666; margin-bottom: 10px; }
+
+.btn-blue {
+    background-color: #89c4f4;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 13px;
 }
-.desc_toko{
-    margin: 10px 0px;
-    margin-left: 10px;
+
+/* Product Grid */
+.product-grid-container {
+    border: 2px solid #3498db; /* Border biru di sekeliling grid */
+    padding: 15px;
 }
-.desc_toko p{
-    margin-bottom: 18px;
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 kolom */
+    gap: 15px;
 }
-.desc_toko a{
-    text-decoration: none;
+
+.product-card {
+    background: white;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.img-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    background: linear-gradient(to top right, transparent 49%, #000 50%, transparent 51%),
+                linear-gradient(to top left, transparent 49%, #000 50%, transparent 51%);
+}
+
+.product-text h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.product-text p {
+    font-size: 11px;
+    color: #888;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
 }

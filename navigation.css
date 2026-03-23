@@ -20,7 +20,7 @@ body {
     right: 0;
     z-index: 100;
     padding: 0 clamp(1.5rem, 4vw, 4rem);
-    background: rgba(18, 167, 18, 0.72);
+    background: rgba(11, 82, 0, 0.72);
     backdrop-filter: blur(24px) saturate(180%);
     -webkit-backdrop-filter: blur(24px) saturate(180%);
     border-bottom: 1px solid var(--border);

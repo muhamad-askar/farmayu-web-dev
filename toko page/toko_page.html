@@ -1,49 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko/Toko</title>
+    <title>Halaman Toko - InTani</title>
     <link rel="stylesheet" href="toko_page.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="InTani">
+
+    <div id="navbar-placeholder">
+        <header class="navbar">
+            <div class="container nav-content">
+                <div class="logo">InTani</div>
+                <div class="search-bar"><input type="text" placeholder="Cari..."></div>
+                <div class="nav-links"><span>jual-beli</span> <span>sewa</span> 🛒 👤</div>
             </div>
-            <div class="search-wrapper">
-                <img src="Cari.png" alt="Cari ">
-                <input type="text" placeholder="Cari di sini...">
+        </header>
+    </div>
+
+    <main class="container">
+        <div class="pathbar">
+            🏠 Home / Toko XXX
+        </div>
+
+        <section class="store-header card">
+            <div class="store-avatar-circle">
+                <span class="user-icon">👤</span>
             </div>
-            <div class="nav-links">
-                <a href="#">jual-beli ▾</a>
-                <a href="#">sewa ▾</a>
-                <div class="nav-icons">
-                    <img src="cart.png" alt="Cart" class="icon-img">
-                    <img src="profile.png" alt="Profile" class="icon-img">
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section class="section-1">
-            <div class="path">
-                <a href="../home.html">Home</a>
-                <a href="toko_page.html">/ Toko</a>
-            </div>
-            <div class="box">
-                <div class="box-content">
-                    <img src="" alt="profil_toko">
-                    <div class="desc_toko">
-                        <h2>nama toko</h2>
-                        <p>xx pengikut</p>
-                        <button>ikuti</button>
-                        <a href="chat_page.html">chat</a>
-                    </div>
+            <div class="store-details">
+                <h1>nama toko</h1>
+                <p>XX pengikut</p>
+                <div class="store-actions">
+                    <button class="btn-blue">ikuti</button>
+                    <a href="chat.page.html" class="btn-blue">chat</a>
                 </div>
             </div>
         </section>
+
+        <section class="product-grid-container">
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <div class="img-placeholder"></div>
+                    <div class="product-text">
+                        <h3>Nama barang</h3>
+                        <p>Info barang</p>
+                    </div>
+                </div>
+
+                <div class="product-card"><div class="img-placeholder"></div><div class="product-text"><h3>Nama barang</h3><p>Info barang</p></div></div>
+                <div class="product-card"><div class="img-placeholder"></div><div class="product-text"><h3>Nama barang</h3><p>Info barang</p></div></div>
+                <div class="product-card"><div class="img-placeholder"></div><div class="product-text"><h3>Nama barang</h3><p>Info barang</p></div></div>
+                <div class="product-card"><div class="img-placeholder"></div><div class="product-text"><h3>Nama barang</h3><p>Info barang</p></div></div>
+                <div class="product-card"><div class="img-placeholder"></div><div class="product-text"><h3>Nama barang</h3><p>Info barang</p></div></div>
+                <div class="product-card"><div class="img-placeholder"></div><div class="product-text"><h3>Nama barang</h3><p>Info barang</p></div></div>
+                <div class="product-card"><div class="img-placeholder"></div><div class="product-text"><h3>Nama barang</h3><p>Info barang</p></div></div>
+                <div class="product-card"><div class="img-placeholder"></div><div class="product-text"><h3>Nama barang</h3><p>Info barang</p></div></div>
+                <div class="product-card"><div class="img-placeholder"></div><div class="product-text"><h3>Nama barang</h3><p>Info barang</p></div></div>
+
+            </div>
+        </section>
     </main>
+
 </body>
 </html>

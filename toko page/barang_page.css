@@ -1,0 +1,132 @@
+/* Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5eee6; /* Warna krem background */
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/*section-1*/
+.path{
+    background-color: white;
+    padding: 10px;
+    margin: 30px 0px 30px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.2);
+}
+.path a{
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+/* Layouting */
+
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 30px;
+    border: 2px solid #3498db; /* Border biru seperti di gambar */
+}
+
+/* Product Section */
+.product-image-placeholder, .store-logo-placeholder {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+    position: relative;
+}
+
+/* Cross line effect in placeholder */
+.product-image-placeholder::after, .store-logo-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top right, transparent 49.5%, #000 49.5%, #000 50.5%, transparent 50.5%);
+}
+
+.product-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 20px;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.quantity-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quantity-wrapper input {
+    width: 50px;
+    text-align: center;
+}
+
+/* Buttons */
+.btn {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    color: white;
+}
+
+.btn-primary { background-color: #7fb3d5; }
+.btn-secondary { background-color: #a9cce3; }
+
+.store-section {
+    border: none; /* Store section tidak pakai border biru */
+}
+
+.btn-outline {
+    display: block;
+    width: 120px;
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #7fb3d5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+/* Reviews */
+.review-section h3 {
+    margin-bottom: 15px;
+}
+
+.review-card {
+    background: #e0e0e0;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    background: #bbb;
+    border-radius: 50%;
+}
+
+.stars {
+    color: #f1c40f;
+    margin-left: 10px;
+}

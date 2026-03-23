@@ -1,52 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toko/Barang</title>
     <link rel="stylesheet" href="barang_page.css">
+    <link rel="stylesheet" href="../navigation.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">
-                <img src="logo.png" alt="InTani">
-            </div>
-            <div class="search-wrapper">
-                <img src="Cari.png" alt="Cari ">
-                <input type="text" placeholder="Cari di sini...">
-            </div>
-            <div class="nav-links">
-                <a href="#">jual-beli ▾</a>
-                <a href="#">sewa ▾</a>
-                <div class="nav-icons">
-                    <img src="cart.png" alt="Cart" class="icon-img">
-                    <img src="profile.png" alt="Profile" class="icon-img">
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="navbar-placeholder"></div>
     <main>
-        <section class="section-1">
+        <nav class="section-1">
             <div class="path">
-                <a href="../home.html">Home</a>
+                <a href="../home.html">Home /</a>
                 <a href="javascript:history.back()" class="btn-back" id="dynamic-katalog">Katalog</a>
                 <a href="barang_page.html">/ Barang XXX</a>
             </div>
+        </nav>
+        <section class="card product-main">
+            <div class="product-image-placeholder">
+                </div>
+                <div class="product-info">
+                <h1>Nama Produk</h1>
+                <p class="price">Harga Rp. XXX.XXX.XXX</p>
+                
+                <div class="quantity-wrapper">
+                    <label>Jumlah</label>
+                    <input type="number" value="1" min="1">
+                    <button class="btn-plus">+</button>
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-secondary">masukkan keranjang</button>
+                    <a href="../transaksi page/transaksi.html" class="btn btn-primary">beli sekarang</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="card store-section">
+            <div class="store-logo-placeholder"></div>
+            <div class="store-info">
+                <h2>Nama Store</h2>
+                <div class="store-buttons">
+                    <a href="toko_page.html" class="btn-outline">kunjungi toko</a>
+                    <a href="chat.page.html" class="btn-outline">chat toko</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h3>penilaian produk</h3>
+            
+            <div class="review-card">
+                <div class="user-avatar"></div>
+                <div class="review-content">
+                    <div class="user-header">
+                        <strong>bimok</strong>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p>ini komentar untuk fitur komen pada kolom komentar</p>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="user-avatar"></div>
+                <div class="review-content">
+                    <div class="user-header">
+                        <strong>lutfi wahyudi</strong>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p>barang jelek tidak sesuai keinginan</p>
+                </div>
+            </div>
         </section>
     </main>
-    <script>
-    //ambil data dari URL (misal: ?name=Katalog%20A)
-    const urlParams = new URLSearchParams(window.location.search);
-    const namaKatalog = urlParams.get('name'); // Isinya bakal "Katalog A"
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // --- MISI A: Handle Breadcrumb (Path) ---
+        const urlParams = new URLSearchParams(window.location.search);
+        const namaKatalog = urlParams.get('name'); 
+        const breadcrumbLink = document.getElementById('dynamic-katalog');
 
-    // 2. Cari elemen breadcrumb tadi
-    const breadcrumbLink = document.getElementById('dynamic-katalog');
+        if (namaKatalog && breadcrumbLink) {
+            breadcrumbLink.innerText = namaKatalog;
+        }
 
-    // 3. Kalau datanya ada, ganti tulisannya!
-    if (namaKatalog) {
-        breadcrumbLink.innerText = namaKatalog;
-    }
+        // --- MISI B: Ambil Navbar (Fetch) ---
+        fetch('../navigation.html')
+            .then(response => {
+                if (!response.ok) throw new Error('File tidak ditemukan');
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+                console.log('Navbar Berhasil Dimuat!');
+            })
+            .catch(err => console.error('Gagal muat navbar:', err));
+            
+    });
 </script>
 </body>
 </html>
