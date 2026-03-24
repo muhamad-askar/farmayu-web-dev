@@ -1,66 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Checkout - InTani</title>
   <link rel="stylesheet" href="checkout.css">
 </head>
 <body>
   <div class="bar">
     <div class="ikon"> <img src="../asset_foto/ikon/logo.png" alt="ikon_home" width="24"> </div>
-    <div class="bar2">Home / Keranjang</div>
+    <div class="bar2">HOME / CHECKOUT</div>
   </div>
 
   <div class="box">
-  <div class="area-atas">
-    <div class="kiri-atas">
-      <div class="gambar"></div>
-      <div class="info-produk">
-    <h2>nama produk</h2>
-    <p>deskripsi</p>
+    <div class="area-atas">
+      <div class="kiri-atas">
+        <div class="gambar">
+          <img src="../asset_foto/benih/tomat.jpg" alt="Benih Tomat">
+        </div>
+        <div class="info-produk">
+          <h2>Benih Tomat Super</h2>
+          <p>Benih tomat berkualitas tinggi dengan daya tumbuh 90%, tahan penyakit, dan cocok untuk iklim tropis.</p>
+        </div>
+      </div>
+      <div class="kanan-atas">
+        <span>1 pcs</span>
+        <span>Rp 150.000</span>
+      </div>
     </div>
-    </div>
-   
-   <div class="kanan-atas">
-   <span>00pcs</span>
-   <span>Harga</span>
-   </div>
-  </div>
 
-  <div class="area-tengah">
-    
+    <div class="area-tengah">
       <div class="pilihan">
-        <label> metode pembayaran</label>
-        <button class="tombol-pilihan" > pilih metode</button>
+        <label>metode pembayaran</label>
+        <select class="dropdown-pilihan" id="metode-pembayaran">
+          <option value="" disabled selected>Pilih Metode</option>
+          <option value="Transfer Bank">Transfer Bank</option>
+          <option value="E-Wallet">E-Wallet (OVO/Dana)</option>
+          <option value="COD">Cash on Delivery (COD)</option>
+        </select>
       </div>
       <div class="pilihan">
-        <label> gunakan voucher toko</label>
-        <button class="tombol-pilihan"> Pilihan voucher</button>
+        <label>gunakan voucher toko</label>
+        <select class="dropdown-pilihan" id="voucher-toko">
+          <option value="" disabled selected>Pilih voucher</option>
+          <option value="Gratis Ongkir">Gratis Ongkir</option>
+          <option value="Diskon 10%">Diskon 10%</option>
+        </select>
       </div>
-       
+    </div>
+
+    <div class="area-bawah">
+      <div class="kiri-bawah">
+        <div class="header-alamat">
+          <p class="alamat">Alamat Pengiriman</p>
+          <button id="btn-ubah-alamat">Ubah</button>
+        </div>
+        <p id="teks-alamat">Jl. Pertanian No. 1, Desa Makmur, Kec. Tani, Indramayu</p>
+        <span id="pesan-error" style="color: red; font-size: 14px; display: none;">Alamat tidak boleh kosong!</span>
+      </div>
+      <div class="kanan-bawah">
+        <div class="rincian">
+          <span>Voucher</span>
+          <span>Belum dipilih</span>
+        </div>
+        <div class="rincian2">
+          <span>Total</span>
+          <span>Rp 150.000</span>
+        </div>
+        <button class="tombol-bayar" id="btn-bayar">BAYAR</button>
+      </div>
+    </div>
   </div>
 
-   <div class="area-bawah">
-    <div class="kiri-bawah">
-      <p class="alamat">Alamat</p>
-      <p>deskripsi alamat</p>
+  <div id="popup-sukses" class="popup-overlay" style="display: none;">
+    <div class="popup-box">
+      <h2>Transaksi Berhasil!</h2>
+      <p>Terima kasih telah berbelanja di InTani.</p>
+      <p>No. Invoice: <strong id="no-invoice"></strong></p>
+      <button id="btn-tutup-popup" onclick="window.location.href='../home.html'">Kembali ke Beranda</button>
     </div>
-   <div class="kanan-bawah">
-    <div class="rincian">
-      <span> Voucher</span>
-      <span> gratis</span>
-    </div>
-    <div class="rincian2">
-      <span>Total</span>
-      <span>10000000</span>
-    </div>
-    <button class="tombol-bayar">bayar</button>
-   </div>
-  </div>
   </div>
 
+  <script>
+    const voucherSelect = document.getElementById('voucher-toko');
+    const teksVoucherRincian = document.querySelector('.rincian span:nth-child(2)');
+    const teksTotal = document.querySelector('.rincian2 span:nth-child(2)');
+    const hargaAwal = 150000;
 
+    voucherSelect.addEventListener('change', function() {
+      teksVoucherRincian.innerText = this.value;
+      let diskon = 0;
+      if (this.value === 'Diskon 10%') {
+        diskon = hargaAwal * 0.10; 
+      } else if (this.value === 'Gratis Ongkir') {
+        diskon = 0; 
+      }
+      const totalAkhir = hargaAwal - diskon;
+      teksTotal.innerText = 'Rp ' + totalAkhir.toLocaleString('id-ID');
+    });
 
+    const btnUbahAlamat = document.getElementById('btn-ubah-alamat');
+    const teksAlamat = document.getElementById('teks-alamat');
+
+    btnUbahAlamat.addEventListener('click', function() {
+      const alamatBaru = prompt("Masukkan alamat pengiriman baru:", teksAlamat.innerText);
+      if (alamatBaru !== null && alamatBaru.trim() !== "") {
+        teksAlamat.innerText = alamatBaru;
+      }
+    });
+
+    const btnBayar = document.getElementById('btn-bayar');
+    const pesanError = document.getElementById('pesan-error');
+    const popupSukses = document.getElementById('popup-sukses');
+    const noInvoice = document.getElementById('no-invoice');
+
+    btnBayar.addEventListener('click', function() {
+      if (teksAlamat.innerText.trim() === '' || teksAlamat.innerText === '-') {
+        pesanError.style.display = 'block';
+      } else {
+        pesanError.style.display = 'none';
+        const randomInv = Math.floor(10000 + Math.random() * 90000);
+        noInvoice.innerText = 'INV-' + randomInv;
+        popupSukses.style.display = 'flex';
+      }
+    });
+  </script>
 </body>
 </html>

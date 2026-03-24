@@ -1,22 +1,32 @@
 body {
   background-color: #EBE1D1;
+  color: #000000;
+  margin: 0;
+  font-family: sans-serif;
 }
+
 .bar {
-  padding: 4px 15px;
-  background-color: white;
-  margin-left: 15px;
-  margin-right: 15px;
+  padding: 10px 15px;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
 }
-.ikon img {margin-left: 0px;}
 
-.bar2{
-  margin-left: 20px;
+.ikon img {
+  margin-left: 0px;
 }
+
+.bar2 {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
 .box {
-  background-color: white;
-  margin :30px 15px;
+  background-color: #ffffff;
+  margin: 25px 15px 35px 15px;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -36,17 +46,29 @@ body {
 .gambar {
   width: 140px;
   height: 140px;
-  border: 1px solid black;
+  border: 1px solid #000000;
+  flex-shrink: 0;
+}
+
+.gambar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .info-produk h2 {
-margin: 0 0 10px 0;
-font-size: 22px;
+  margin: 0 0 10px 0;
+  font-size: 22px;
+  color: #000000;
 }
 
 .info-produk p {
   margin: 0;
   font-size: 16px;
+  color: #000000;
+  max-width: 400px;
+  line-height: 1.4;
 }
 
 .kanan-atas {
@@ -55,9 +77,11 @@ font-size: 22px;
   align-items: flex-end;
   height: 140px;
   font-size: 16px;
+  font-weight: bold;
+  color: #000000;
 }
 
-.area-tengah{
+.area-tengah {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -71,19 +95,36 @@ font-size: 22px;
   gap: 20px;
 }
 
-.tombol-pilihan {
-  background-color: transparent;
-  border: 1px solid black;
-  padding: 5px 0;
-  width: 160px;
-  text-align: center;
+.pilihan label {
+  font-weight: bold;
+  color: #000000;
+}
+
+.dropdown-pilihan {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 5px 10px;
+  width: 180px;
   font-size: 14px;
   cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease;
+  font-family: sans-serif;
+}
+
+.dropdown-pilihan:hover {
+  background-color: #EBE1D1;
+}
+
+.dropdown-pilihan:focus {
+  outline: none;
+  border-color: #8bb6ec;
 }
 
 .area-bawah {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: flex-end;
   gap: 20px;
 }
@@ -92,6 +133,40 @@ font-size: 22px;
   max-width: 300px;
   margin-bottom: 5px;
   font-size: 16px;
+  color: #000000;
+}
+
+.header-alamat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.alamat {
+  font-weight: bold;
+  margin: 0;
+}
+
+#btn-ubah-alamat {
+  background: none;
+  border: none;
+  color: #8bb6ec;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+#btn-ubah-alamat:hover {
+  text-decoration: underline;
+}
+
+#teks-alamat {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #000000;
 }
 
 .kanan-bawah {
@@ -103,10 +178,12 @@ font-size: 22px;
 }
 
 .rincian {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   width: 100%;
   font-size: 16px;
+  font-weight: bold;
+  color: #000000;
 }
 
 .rincian2 {
@@ -115,19 +192,74 @@ font-size: 22px;
   justify-content: space-between;
   width: 100%;
   font-size: 16px;
-
+  font-weight: bold;
+  color: #000000;
 }
 
 .tombol-bayar {
   background-color: #8bb6ec;
-  color: white;
+  color: #ffffff;
   border: none;
   width: 100%;
   padding: 8px 0;
   font-size: 16px;
+  font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.2s ease;
 }
+
 .tombol-bayar:hover {
+  background-color: #6a9ce0;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background-color: #ffffff;
+  padding: 40px;
+  border: 1px solid #000000;
+  text-align: center;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.popup-box h2 {
+  margin: 0;
+  color: #000000;
+  font-size: 24px;
+}
+
+.popup-box p {
+  margin: 0;
+  color: #000000;
+  font-size: 16px;
+}
+
+#btn-tutup-popup {
+  background-color: #8bb6ec;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+  transition: 0.2s ease;
+}
+
+#btn-tutup-popup:hover {
   background-color: #6a9ce0;
 }
