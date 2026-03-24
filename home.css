@@ -219,6 +219,9 @@ html, body {
 }
 .cat-card:hover {
   transform: translateY(-4px);
+  background: #0f6e22;
+  border-radius: 20px;
+  border: 1.5px solid rgb(74, 160, 71);
   box-shadow: 0 8px 24px rgba(93,168,50,0.12);
 }
 .cat-icon {
@@ -234,7 +237,9 @@ html, body {
   background: #edf4e3;
   padding: 72px 0 80px;
 }
-
+.nyawit-full .container{
+  overflow: visible !important;
+}
 .nyawit-header {
   text-align: center;
   margin-bottom: 48px;
@@ -257,9 +262,9 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 0 32px;
+  max-width: 750px; 
+  margin: auto;
+  overflow: visible !important; 
 }
 
 .paket-box {
@@ -276,15 +281,22 @@ html, body {
   box-shadow: 0 2px 12px rgba(0,0,0,0.05);
 }
 .paket-box:hover {
+  z-index: 999;
   transform: translateY(-2px);
   box-shadow: 0 8px 28px rgba(0,0,0,0.09);
 }
 
 .modal-right {
-  align-self: flex-start; width: 88%; 
+  align-self: flex-start; 
+  width: 75%;
+  margin-right: auto;
+  margin-left: 0%; 
 }
 .modal-left  {
-  align-self: flex-end;   width: 88%; 
+  align-self: flex-end;   
+  width: 75%; 
+  margin-left: auto;
+  margin-right: 0%;
 }
 
 .modal-right:hover { 
