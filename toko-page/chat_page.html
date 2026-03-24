@@ -5,17 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat - InTani</title>
     <link rel="stylesheet" href="chat_page.css">
+    <link rel="stylesheet" href="../component/product-chat/product-chat.css">
 </head>
 <body>
-
-    <header class="navbar">
-        <div class="container nav-content">
-            <div class="logo">InTani</div>
-            <div class="search-bar"><input type="text" placeholder="Cari..."></div>
-            <div class="nav-links"><span>jual-beli</span> <span>sewa</span> 🛒 👤</div>
-        </div>
-    </header>
-
     <main class="container chat-layout">
         
         <section class="chat-header card-border-blue">
@@ -37,6 +29,7 @@
                     ada yg bisa kami bantu?
                 </div>
             </div>
+            <div id="chat-product-placeholder"></div>
         </section>
 
         <footer class="chat-input-area">
@@ -45,6 +38,6 @@
         </footer>
 
     </main>
-
+    <script src="../component/product-chat/product-chat.js"></script>
 </body>
 </html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko/Barang</title>
+    <link rel="stylesheet" href="barang_page.css">
+    <link rel="stylesheet" href="../navigation.css">
+    <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css">
+    <link rel="stylesheet" href="../component/product-container/product-container.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+    <div id="pathbar-placeholder"></div>
+    <div id="product-placeholder"></div>
+    
+    <main>
+        <section class="card store-section">
+            <div class="store-logo-placeholder"></div>
+            <div class="store-info">
+                <h2>Nama Store</h2>
+                <div class="store-buttons">
+                    <a href="toko_page.html" class="btn-outline">kunjungi toko</a>
+                    <a href="chat.page.html" class="btn-outline">chat toko</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="review-section">
+            <h3>penilaian produk</h3>
+            
+            <div class="review-card">
+                <div class="user-avatar"></div>
+                <div class="review-content">
+                    <div class="user-header">
+                        <strong>bimok</strong>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p>ini komentar untuk fitur komen pada kolom komentar</p>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div class="user-avatar"></div>
+                <div class="review-content">
+                    <div class="user-header">
+                        <strong>lutfi wahyudi</strong>
+                        <span class="stars">★★★★★</span>
+                    </div>
+                    <p>barang jelek tidak sesuai keinginan</p>
+                </div>
+            </div>
+        </section>
+    </main>
+<script src="../component/app-loader.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('../navigation.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+        });
+    });
+</script>
+</body>
+</body>
+</html>
