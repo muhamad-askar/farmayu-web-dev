@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Keranjang - InTani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="transaksi.css">
 </head>
 <body>
@@ -11,8 +14,14 @@
     <div class="ikon"> <img src="../asset_foto/ikon/logo.png" alt="ikon_home" width="24"> </div>
     <div class="bar2">Home / Keranjang</div>
   </div>
+
   <div class="list">
-    <div class="list1">Produk</div>
+    <div class="list1">
+      <div class="checkbox" style="margin-top: 0;">
+        <input type="checkbox" id="pilih-semua" style="transform: scale(1.2);">
+      </div>
+      <label for="pilih-semua">Produk</label>
+    </div>
     <div  class="list2">Harga Satuan</div>
     <div  class="list3">Jumlah</div>
     <div class="list4">Total Harga</div>
@@ -21,32 +30,241 @@
 
 <div class="produk">
   <div class="produk1">
-    
     <div class="kolom1">
        <div class="checkbox">
-        <input type="checkbox">
+        <input type="checkbox" style="transform: scale(1.2);">
       </div>
       <div class="konten">
-      <div class="kotak-gambar"></div>
+      <div class="kotak-gambar">
+      <img src="../asset_foto/benih/tomat.jpg" alt="Gambar Produk">
+      </div>
       
       <div class="info-produk">
-        <div class="nama-produk">Nama Produk</div>
-        <div class="deskripsi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum debitis mollitia, possimus quaerat eaque nam non porro laborum quia accusantium in beatae, culpa fugit dolor assumenda voluptates quasi pariatur quos?</div>
-
-      </div>
+       <div class="nama-produk">Benih Tomat Super</div>
+            <div class="deskripsi">Benih tomat berkualitas tinggi dengan daya tumbuh 90%, tahan penyakit, dan cocok untuk iklim tropis.</div>
+          </div>
       </div>
     </div>
     
     <div class="kolom2">Rp 150.000</div>
-    <div class="kolom3">1</div>
-    <div class="kolom4">Rp 150.000
+    <div class="kolom3">
+      <div class="pengatur-jumlah">
+        <button class="tombol-minus">-</button>
+        <span class="angka">1</span>
+        <button class="tombol-plus">+</button>
+      </div>
+    </div>
+    <div class="kolom4">
+      <div class="total-harga" data-harga="150000">Rp 150.000</div>
       <div class="tombol">
-        <button class="tombolk">hapus</button>
-        <button class="tombolk" onclick="window.location.href='checkout.html'">beli</button>
+        <button class="tombolk">HAPUS</button>
+        <button class="tombolk" onclick="window.location.href='checkout.html'">BELI</button>
       </div>
     </div>
 
   </div>
 </div>
+
+
+<div class="produk">
+  <div class="produk1">
+    <div class="kolom1">
+       <div class="checkbox">
+        <input type="checkbox" style="transform: scale(1.2);">
+      </div>
+      <div class="konten">
+      <div class="kotak-gambar">
+      <img src="../asset_foto/benih/tomat.jpg" alt="Gambar Produk">
+      </div>
+      
+      <div class="info-produk">
+       <div class="nama-produk">Benih Tomat Super</div>
+            <div class="deskripsi">Benih tomat berkualitas tinggi dengan daya tumbuh 90%, tahan penyakit, dan cocok untuk iklim tropis.</div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="kolom2">Rp 150.000</div>
+    <div class="kolom3">
+      <div class="pengatur-jumlah">
+        <button class="tombol-minus">-</button>
+        <span class="angka">1</span>
+        <button class="tombol-plus">+</button>
+      </div>
+    </div>
+    <div class="kolom4">
+      <div class="total-harga" data-harga="150000">Rp 150.000</div>
+      <div class="tombol">
+        <button class="tombolk">HAPUS</button>
+        <button class="tombolk" onclick="window.location.href='checkout.html'">BELI</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+<div class="produk">
+  <div class="produk1">
+    <div class="kolom1">
+       <div class="checkbox">
+        <input type="checkbox" style="transform: scale(1.2);">
+      </div>
+      <div class="konten">
+      <div class="kotak-gambar">
+      <img src="../asset_foto/benih/tomat.jpg" alt="Gambar Produk">
+      </div>
+      
+      <div class="info-produk">
+       <div class="nama-produk">Benih Tomat Super</div>
+            <div class="deskripsi">Benih tomat berkualitas tinggi dengan daya tumbuh 90%, tahan penyakit, dan cocok untuk iklim tropis.</div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="kolom2">Rp 150.000</div>
+    <div class="kolom3">
+      <div class="pengatur-jumlah">
+        <button class="tombol-minus">-</button>
+        <span class="angka">1</span>
+        <button class="tombol-plus">+</button>
+      </div>
+    </div>
+    <div class="kolom4">
+      <div class="total-harga" data-harga="150000">Rp 150.000</div>
+      <div class="tombol">
+        <button class="tombolk">HAPUS</button>
+        <button class="tombolk" onclick="window.location.href='checkout.html'">BELI</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="produk">
+  <div class="produk1">
+    <div class="kolom1">
+       <div class="checkbox">
+        <input type="checkbox" style="transform: scale(1.2);">
+      </div>
+      <div class="konten">
+      <div class="kotak-gambar">
+      <img src="../asset_foto/benih/tomat.jpg" alt="Gambar Produk">
+      </div>
+      
+      <div class="info-produk">
+       <div class="nama-produk">Benih Tomat Super</div>
+            <div class="deskripsi">Benih tomat berkualitas tinggi dengan daya tumbuh 90%, tahan penyakit, dan cocok untuk iklim tropis.</div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="kolom2">Rp 150.000</div>
+    <div class="kolom3">
+      <div class="pengatur-jumlah">
+        <button class="tombol-minus">-</button>
+        <span class="angka">1</span>
+        <button class="tombol-plus">+</button>
+      </div>
+    </div>
+    <div class="kolom4">
+      <div class="total-harga" data-harga="150000">Rp 150.000</div>
+      <div class="tombol">
+        <button class="tombolk">HAPUS</button>
+        <button class="tombolk" onclick="window.location.href='checkout.html'">BELI</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="produk">
+  <div class="produk1">
+    <div class="kolom1">
+       <div class="checkbox">
+        <input type="checkbox" style="transform: scale(1.2);">
+      </div>
+      <div class="konten">
+      <div class="kotak-gambar">
+      <img src="../asset_foto/benih/tomat.jpg" alt="Gambar Produk">
+      </div>
+      
+      <div class="info-produk">
+       <div class="nama-produk">Benih Tomat Super</div>
+            <div class="deskripsi">Benih tomat berkualitas tinggi dengan daya tumbuh 90%, tahan penyakit, dan cocok untuk iklim tropis.</div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="kolom2">Rp 150.000</div>
+    <div class="kolom3">
+      <div class="pengatur-jumlah">
+        <button class="tombol-minus">-</button>
+        <span class="angka">1</span>
+        <button class="tombol-plus">+</button>
+      </div>
+    </div>
+    <div class="kolom4">
+      <div class="total-harga" data-harga="150000">Rp 150.000</div>
+      <div class="tombol">
+        <button class="tombolk">HAPUS</button>
+        <button class="tombolk" onclick="window.location.href='checkout.html'">BELI</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+  const minusBtns = document.querySelectorAll('.tombol-minus');
+  const plusBtns = document.querySelectorAll('.tombol-plus');
+  const jumlahSpans = document.querySelectorAll('.angka');
+  const totalHargas = document.querySelectorAll('.total-harga');
+
+  plusBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      let jumlah = parseInt(jumlahSpans[index].innerText);
+      jumlah++;
+      jumlahSpans[index].innerText = jumlah;
+      updateHarga(index, jumlah);
+    });
+  });
+
+  minusBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      let jumlah = parseInt(jumlahSpans[index].innerText);
+      if (jumlah > 1) { 
+        jumlah--;
+        jumlahSpans[index].innerText = jumlah;
+        updateHarga(index, jumlah);
+      }
+    });
+  });
+
+  function updateHarga(index, jumlah) {
+    const hargaSatuan = parseInt(totalHargas[index].getAttribute('data-harga'));
+    const total = hargaSatuan * jumlah;
+    totalHargas[index].innerText = 'Rp ' + total.toLocaleString('id-ID');
+  }
+</script>
 </body>
 </html>
