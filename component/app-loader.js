@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async function() {
                 
                 // LOGIKA TUJUAN FIX
                 if (key === 'cat') {
-                    item.href = '../katalog-page/katalog_${value}.html'; 
+                    item.href = `../katalog page/katalog_${value.toLowerCase()}.html`; 
                 } else if (key === 'name') {
                     // Link balik ke halaman produk itu sendiri
                     const cat = urlParams.get('cat');
