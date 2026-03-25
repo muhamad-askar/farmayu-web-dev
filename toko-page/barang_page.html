@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko/Barang</title>
+    <title>Barang</title>
     <link rel="stylesheet" href="barang_page.css">
     <link rel="stylesheet" href="../navigation.css">
     <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css">
@@ -15,64 +15,66 @@
     <div id="product-placeholder"></div>
     
     <main>
-        <section class="card store-section">
-            <div class="store-logo-placeholder"></div>
+        <section class="card-store">
+            <img id="store-img" src="../asset_foto/placeholder.jpg" alt="store">
             <div class="store-info">
-                <h2>Nama Store</h2>
-                <div class="store-buttons">
-                    <a id="btn-ke-toko" href="#" class="btn-outline">Kunjungi Toko</a>
-                    <a href="chat_page.html" class="btn-outline">chat toko</a>
+                <h1 id="store-name">Toko Intani</h1>
+                <div class="store-button">
+                    <a id="btn-ke-toko" href="#" class="btn-store">Kunjungi Toko</a>
+                    <a href="chat_page.html" class="btn-store">Chat Toko</a>
                 </div>
             </div>
         </section>
 
         <section class="review-section">
-            <h3>penilaian produk</h3>
-            
+            <h3>Penilaian Produk</h3>
             <div class="review-card">
-                <div class="user-avatar"></div>
-                <div class="review-content">
+                <img id="user-avatar" src="../asset_foto/placeholder.jpg" alt="user-icon">
+                <div class="review-box">
                     <div class="user-header">
-                        <strong>bimok</strong>
+                        <h1>Bimok</h1>
                         <span class="stars">★★★★★</span>
                     </div>
-                    <p>ini komentar untuk fitur komen pada kolom komentar</p>
+                    <p>Ini komentar untuk fitur komen pada kolom komentar</p>
                 </div>
             </div>
-
             <div class="review-card">
-                <div class="user-avatar"></div>
-                <div class="review-content">
+                <img id="user-avatar" src="../asset_foto/placeholder.jpg" alt="user-icon">
+                <div class="review-box">
                     <div class="user-header">
-                        <strong>lutfi wahyudi</strong>
-                        <span class="stars">★★★★★</span>
+                        <h1>Lutfi wahyudi</h1>
+                        <span class="stars">★★</span>
                     </div>
-                    <p>barang jelek tidak sesuai keinginan</p>
+                    <p>Barang jelek tidak sesuai keinginan</p>
                 </div>
             </div>
         </section>
+        <div class="chat-input-area">
+            <input type="text" placeholder="Tulis komentar...">
+            <button class="btn-send">➤</button>
+        </div>
     </main>
 
-  <script src="/global.js"></script>
-<script src="../component/app-loader.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Load Navbar manual (tetep ada)
-        fetch('../navigation.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+    <script src="/global.js"></script>
+    <script src="../component/app-loader.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Load Navbar manual (tetep ada)
+            fetch('../navigation.html')
+                .then(res => res.text())
+                .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
 
-        // --- FIX: OPER SEMUA DATA KE TOKO ---
-        const p = new URLSearchParams(window.location.search);
-        const btnKeToko = document.getElementById('btn-ke-toko');
-        
-        if (btnKeToko) {
-            // Ambil semua data produk yang ada di URL sekarang, tambahin info toko
-            const dataProduk = p.toString();
-            btnKeToko.href = `toko_page.html?${dataProduk}&toko=Toko-Intani`;
-        }
-    });
-</script>
+            // --- FIX: OPER SEMUA DATA KE TOKO ---
+            const p = new URLSearchParams(window.location.search);
+            const btnKeToko = document.getElementById('btn-ke-toko');
+            
+            if (btnKeToko) {
+                // Ambil semua data produk yang ada di URL sekarang, tambahin info toko
+                const dataProduk = p.toString();
+                btnKeToko.href = `toko_page.html?${dataProduk}&toko=Toko-Intani`;
+            }
+        });
+    </script>
 </body>
 </body>
 </html>

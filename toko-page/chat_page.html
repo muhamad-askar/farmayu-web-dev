@@ -3,55 +3,58 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat - InTani</title>
+    <title>Chat</title>
     <link rel="stylesheet" href="chat_page.css" />
     <link rel="stylesheet" href="../navigation.css">
-    <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css">
+    <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css"> 
     <link rel="stylesheet" href="../component/chat-preview/chat-preview.css" />
 </head>
 <body>
     <div id="navbar-placeholder"></div>
-<div id="pathbar-placeholder"></div>
+    <div id="pathbar-placeholder"></div> <!-- breadcrumb -->
 
-<main class="container chat-layout">
-    <section class="chat-header card-border-blue">
-        <div class="avatar-circle">👤</div>
-        <div class="header-info">
-            <h2 id="chat-nama-toko">Nama Toko</h2>
-            <a href="#" id="btn-back-toko" class="btn-visit">Kunjungi Toko</a>
-        </div>
-    </section>
+    <main>
+            <section class="chat-header card-border-blue">
+                <img id="store-img" src="../asset_foto/placeholder.jpg" alt="store">
+                <div class="header-info">
+                    <h2 id="chat-nama-toko">Nama Toko</h2>
+                    <a href="#" id="btn-back-toko" class="btn-visit">Kunjungi Toko</a>
+                </div>
+            </section>
+            <section class="chat-window">
+                <div id="chat-product-placeholder"></div>
+                
+                <div class="message-row">
+                    <div class="mini-avatar">👤</div>
+                    <div class="bubble">Ada yang bisa kami bantu?</div>
+                </div>
+            </section>
+            <div class="chat-input-area">
+                <input type="text" placeholder="tulis pesan">
+                <button class="btn-send">➤</button>
+            </div>
+    </main>
 
-    <section class="chat-window">
-        <div id="chat-product-placeholder"></div>
-        
-        <div class="message-row">
-            <div class="mini-avatar">👤</div>
-            <div class="bubble">Ada yang bisa kami bantu?</div>
-        </div>
-    </section>
-</main>
+    <script src="../component/app-loader.js"></script>
+    <script src="../component/chat-preview/chat-preview.js"></script>
+    <script>
+        // Tunggu semua komponen (navbar/breadcrumb) beres dimuat sama app-loader
+        window.addEventListener("load", function() {
+            const params = new URLSearchParams(window.location.search);
+            
+            // 1. Update Nama Toko di Header
+            const namaToko = params.get('toko');
+            if (namaToko) {
+                document.getElementById('chat-nama-toko').innerText = namaToko.replace(/-/g, ' ');
+            }
 
-<script src="../component/app-loader.js"></script>
-<script src="../component/chat-preview/chat-preview.js"></script>
-<script>
-    // Tunggu semua komponen (navbar/breadcrumb) beres dimuat sama app-loader
-    window.addEventListener("load", function() {
-        const params = new URLSearchParams(window.location.search);
-        
-        // 1. Update Nama Toko di Header
-        const namaToko = params.get('toko');
-        if (namaToko) {
-            document.getElementById('chat-nama-toko').innerText = namaToko.replace(/-/g, ' ');
-        }
-
-        // 2. Update Link Balik ke Toko (Biar Breadcrumb Gak Reset)
-        const btnBackToko = document.getElementById('btn-back-toko');
-        if (btnBackToko) {
-            // Kita balik ke toko_page sambil bawa semua bekal URL
-            btnBackToko.href = `toko_page.html?${params.toString()}`;
-        }
-    });
-</script>
+            // 2. Update Link Balik ke Toko (Biar Breadcrumb Gak Reset)
+            const btnBackToko = document.getElementById('btn-back-toko');
+            if (btnBackToko) {
+                // Kita balik ke toko_page sambil bawa semua bekal URL
+                btnBackToko.href = `toko_page.html?${params.toString()}`;
+            }
+        });
+    </script>
 </body>
 </html>
