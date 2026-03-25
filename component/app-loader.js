@@ -36,8 +36,6 @@ document.addEventListener("DOMContentLoaded", async function() {
                 const item = document.createElement('a');
                 item.innerText = decodeURIComponent(value).replace(/-/g, ' ');
                 item.className = "breadcrumb-item";
-                item.style.textDecoration = "none";
-                item.style.color = "inherit";
                 
                 // LOGIKA TUJUAN FIX (Anti Nyasar)
                 if (key === 'cat') {
