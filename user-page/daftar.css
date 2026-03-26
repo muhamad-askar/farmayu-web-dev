@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'DM-sans';
+  src: url(../asset_foto/DMSans.ttf);
+}
+*{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
 body {
   background-color: rgb(254, 251, 231);
   display: flex;
@@ -5,6 +13,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
+  font-family: 'DM-sans';
 }
 
 .kiri {
@@ -26,6 +35,12 @@ body {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+
+}
+
+.kembali {
+  text-decoration: none;
+  color: black;
 }
 
 .kanan {

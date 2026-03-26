@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Profil User - InTani</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="user.css" />
     <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css">
   </head>
@@ -14,9 +15,11 @@
     <div class="main-wrapper">
       <div class="box">
         <div class="profil">
-          <div class="foto"></div>
+          <div class="foto">
+             <img src="../asset_foto/ikon/user.png" alt="User Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
           <div class="info-profil">
-            <h1>Nama user</h1>
+            <h1 id="header-nama">Nama user</h1>
             <p>nama toko <span class="toko">nama toko</span></p>
           </div>
         </div>
@@ -26,7 +29,7 @@
         <div class="tengah-kiri">
           <aside class="samping">
             <ul>
-              <li>Profil saya</li>
+              <li class="aktif">Profil saya</li>
               <li>Pesanan saya</li>
             </ul>
           </aside>
@@ -34,25 +37,34 @@
 
         <main class="profil-deskripsi">
           <h2>Profil saya</h2>
-          <div class="form">
-            <div class="form2">
+          <div class="form-container">
+            <div class="form-inputan">
+              
               <div class="form-group">
                 <label>nama</label>
-                <div class="field">nama profil</div>
+                <input type="text" id="input-nama" value="nama profil">
               </div>
+              
               <div class="form-group">
                 <label>email</label>
-                <div class="field">user@gmail.com</div>
+                <input type="email" id="input-email" value="user@gmail.com">
               </div>
+              
               <div class="form-group">
                 <label>no. hp</label>
-                <div class="field">0812-3456-7890</div>
+                <input type="text" id="input-hp" value="0812-3456-7890">
               </div>
+              
               <div class="form-group">
                 <label>alamat</label>
-                <div class="field textarea">alamat user</div>
+                <textarea id="textarea-alamat" rows="4">alamat user</textarea>
               </div>
-              <button class="btn-simpan">Simpan</button>
+              
+              <div class="tombol-aksi">
+                <button id="btn-simpan" class="btn btn-save">Simpan</button>
+                <button id="btn-logout" class="btn btn-logout">Logout</button>
+              </div>
+
             </div>
 
             <div class="photo-edit">
@@ -69,5 +81,58 @@
 
     <script src="/global.js"></script>
     <script src="../component/breadcrumb/breadcrumb.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          const sesiAktif = localStorage.getItem("sesiInTani");
+          const headerNama = document.getElementById("header-nama");
+          const inputNama = document.getElementById("input-nama");
+
+          const inputEmail = document.getElementById("input-email");
+          const inputHp = document.getElementById("input-hp");
+          const textareaAlamat = document.getElementById("textarea-alamat");
+
+   
+          if (!sesiAktif) {
+              window.location.href = "login.html";
+          } else {
+  
+              headerNama.innerText = sesiAktif.toLowerCase();
+ 
+              const profilTersimpan = JSON.parse(localStorage.getItem(`profil_${sesiAktif}`));
+              
+              if(profilTersimpan) {
+                 inputNama.value = profilTersimpan.nama;
+                 inputEmail.value = profilTersimpan.email;
+                 inputHp.value = profilTersimpan.hp;
+                 textareaAlamat.value = profilTersimpan.alamat;
+              } else {
+   
+                 inputNama.value = sesiAktif;
+              }
+          }
+
+          const btnSimpan = document.getElementById("btn-simpan");
+          btnSimpan.addEventListener("click", function() {
+              const dataBaru = {
+                  nama: inputNama.value,
+                  email: inputEmail.value,
+                  hp: inputHp.value,
+                  alamat: textareaAlamat.value
+              };
+
+              localStorage.setItem(`profil_${sesiAktif}`, JSON.stringify(dataBaru));
+              headerNama.innerText = inputNama.value.toLowerCase();
+              
+              alert("✅ Profil berhasil diperbarui!");
+          });
+          const btnLogout = document.getElementById("btn-logout");
+          if(btnLogout) {
+             btnLogout.addEventListener("click", function() {
+                 localStorage.removeItem("sesiInTani");
+                 window.location.href = "login.html";
+             });
+          }
+      });
+    </script>
   </body>
 </html>
