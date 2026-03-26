@@ -134,6 +134,9 @@
 .about:hover {
   color: #f5a623;
 }
+.about h3:hover{
+  color: #f5a623;
+}
 .footer-right ul li:hover {
   color: #f5a623;
 }
