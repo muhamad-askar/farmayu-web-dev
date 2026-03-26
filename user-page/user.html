@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profil User - InTani</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="user.css" />
-    <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css">
+    <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css" />
   </head>
   <body>
     <div id="navbar-placeholder"></div>
@@ -16,59 +19,57 @@
       <div class="box">
         <div class="profil">
           <div class="foto">
-             <img src="../asset_foto/ikon/user.png" alt="User Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+            <img
+              src="../asset_foto/ikon/user.png"
+              alt="User Avatar"
+              style="width: 100%; height: 100%; object-fit: cover"
+            />
           </div>
           <div class="info-profil">
             <h1 id="header-nama">Nama user</h1>
-            <p>nama toko <span class="toko">nama toko</span></p>
+            <p>nama toko<span class="toko" id="header-toko">Belum ada toko</span></p>
           </div>
         </div>
       </div>
 
       <div class="area-tengah">
-        <div class="tengah-kiri">
-          <aside class="samping">
-            <ul>
-              <li class="aktif">Profil saya</li>
-              <li>Pesanan saya</li>
-            </ul>
-          </aside>
-        </div>
-
         <main class="profil-deskripsi">
           <h2>Profil saya</h2>
           <div class="form-container">
             <div class="form-inputan">
-              
               <div class="form-group">
                 <label>nama</label>
-                <input type="text" id="input-nama" value="nama profil">
-              </div>
-              
-              <div class="form-group">
-                <label>email</label>
-                <input type="email" id="input-email" value="user@gmail.com">
-              </div>
-              
-              <div class="form-group">
-                <label>no. hp</label>
-                <input type="text" id="input-hp" value="0812-3456-7890">
-              </div>
-              
-              <div class="form-group">
-                <label>alamat</label>
-                <textarea id="textarea-alamat" rows="4">alamat user</textarea>
-              </div>
-              
-              <div class="tombol-aksi">
-                <button id="btn-simpan" class="btn btn-save">Simpan</button>
-                <button id="btn-logout" class="btn btn-logout">Logout</button>
+                <input type="text" id="input-nama" placeholder="nama profil" value="" />
               </div>
 
+              <div class="form-group">
+                <label>nama toko</label>
+                <input type="text" id="input-toko" placeholder="Masukkan nama toko Anda" value="" />
+              </div>
+
+              <div class="form-group">
+                <label>email</label>
+                <input type="email" id="input-email" placeholder="Email" value="" />
+              </div>
+
+              <div class="form-group">
+                <label>no. hp</label>
+                <input type="text" id="input-hp" placeholder="No HP" value="" />
+              </div>
+
+              <div class="form-group">
+                <label>alamat</label>
+                <input type="text" id="textarea-alamat" placeholder="alamat lengkap" value="" />
+              </div>
+
+              <div class="tombol-aksi" >
+                <button id="btn-simpan" class="btn btn-save">Simpan</button>
+                <button id="btn-logout" class="btn btn-logout" >Logout</button>
+              </div>
             </div>
 
             <div class="photo-edit">
-              <div class="avatar-mid">
+              <div class="avatar-mid" >
                 <img src="../asset_foto/ikon/user.png" alt="User" />
               </div>
               <button class="btn-ganti">Ganti profil</button>
@@ -81,56 +82,74 @@
 
     <script src="/global.js"></script>
     <script src="../component/breadcrumb/breadcrumb.js"></script>
+    
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          const sesiAktif = localStorage.getItem("sesiInTani");
-          const headerNama = document.getElementById("header-nama");
-          const inputNama = document.getElementById("input-nama");
+      document.addEventListener("DOMContentLoaded", function () {
+        const sesiAktif = localStorage.getItem("sesiInTani");
 
-          const inputEmail = document.getElementById("input-email");
-          const inputHp = document.getElementById("input-hp");
-          const textareaAlamat = document.getElementById("textarea-alamat");
+        if (!sesiAktif) {
+          window.location.href = "login.html";
+          return;
+        }
 
+        const headerNama = document.getElementById("header-nama");
+        const headerToko = document.getElementById("header-toko");
+        
+        const inputNama = document.getElementById("input-nama");
+        const inputToko = document.getElementById("input-toko");
+        const inputEmail = document.getElementById("input-email");
+        const inputHp = document.getElementById("input-hp");
+        const inputAlamat = document.getElementById("textarea-alamat"); 
+
+        headerNama.innerText = sesiAktif.toLowerCase();
+
+        const profilTersimpan = JSON.parse(localStorage.getItem(`profil_${sesiAktif}`));
+
+        if (profilTersimpan) {
+          inputNama.value = profilTersimpan.nama || "";
+          inputToko.value = profilTersimpan.toko || "";
+          inputEmail.value = profilTersimpan.email || "";
+          inputHp.value = profilTersimpan.hp || "";
+          inputAlamat.value = profilTersimpan.alamat || "";
+          
+          headerToko.innerText = profilTersimpan.toko || "Belum ada toko";
+        } else {
    
-          if (!sesiAktif) {
-              window.location.href = "login.html";
-          } else {
-  
-              headerNama.innerText = sesiAktif.toLowerCase();
- 
-              const profilTersimpan = JSON.parse(localStorage.getItem(`profil_${sesiAktif}`));
-              
-              if(profilTersimpan) {
-                 inputNama.value = profilTersimpan.nama;
-                 inputEmail.value = profilTersimpan.email;
-                 inputHp.value = profilTersimpan.hp;
-                 textareaAlamat.value = profilTersimpan.alamat;
-              } else {
-   
-                 inputNama.value = sesiAktif;
-              }
-          }
+          inputNama.value = sesiAktif;
+        }
 
-          const btnSimpan = document.getElementById("btn-simpan");
-          btnSimpan.addEventListener("click", function() {
-              const dataBaru = {
-                  nama: inputNama.value,
-                  email: inputEmail.value,
-                  hp: inputHp.value,
-                  alamat: textareaAlamat.value
-              };
+        const btnSimpan = document.getElementById("btn-simpan");
+        btnSimpan.addEventListener("click", function () {
+          const dataBaru = {
+            nama: inputNama.value,
+            toko: inputToko.value,
+            email: inputEmail.value,
+            hp: inputHp.value,
+            alamat: inputAlamat.value,
+          };
 
-              localStorage.setItem(`profil_${sesiAktif}`, JSON.stringify(dataBaru));
-              headerNama.innerText = inputNama.value.toLowerCase();
+          localStorage.setItem(`profil_${sesiAktif}`, JSON.stringify(dataBaru));
 
+          headerNama.innerText = inputNama.value.toLowerCase();
+          headerToko.innerText = inputToko.value || "Belum ada toko";
+
+          const teksAwal = btnSimpan.innerText;
+          btnSimpan.innerText = "Tersimpan ✓";
+          btnSimpan.style.backgroundColor = "#5da832";
+          
+          setTimeout(() => {
+              btnSimpan.innerText = teksAwal;
+              btnSimpan.style.backgroundColor = "#89C4F4"; 
+          }, 2000);
+        });
+
+        const btnLogout = document.getElementById("btn-logout");
+        if (btnLogout) {
+          btnLogout.addEventListener("click", function () {
+            localStorage.removeItem("sesiInTani");
+            window.location.href = "login.html";
           });
-          const btnLogout = document.getElementById("btn-logout");
-          if(btnLogout) {
-             btnLogout.addEventListener("click", function() {
-                 localStorage.removeItem("sesiInTani");
-                 window.location.href = "login.html";
-             });
-          }
+        }
       });
     </script>
   </body>

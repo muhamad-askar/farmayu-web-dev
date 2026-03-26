@@ -1,13 +1,14 @@
-*{
-  overflow-x: hidden;
-}
 body {
-  background-color: #EBE1D1;
+  background-color: #ebe1d1;
   color: #000000;
   font-family: sans-serif;
 }
-*, *::before, *::after { 
-  margin: 0; padding: 0; box-sizing: border-box; 
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .bar {
@@ -119,7 +120,7 @@ body {
 }
 
 .dropdown-pilihan:hover {
-  background-color: #EBE1D1;
+  background-color: #ebe1d1;
 }
 
 .dropdown-pilihan:focus {
@@ -211,6 +212,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: 0.2s ease;
+  border-radius: 5px;
 }
 
 .tombol-bayar:hover {
@@ -285,7 +287,7 @@ body {
   padding: 12px;
   border-radius: 10px;
   border: 1px solid #e8eddf;
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;
   margin-bottom: 20px;
   resize: none;
@@ -321,27 +323,30 @@ body {
 }
 
 #toast-notif {
-    visibility: hidden;
-    min-width: 250px;
-    background-color: #e74c3c;
-    color: #ffffff;
-    text-align: center;
-    border-radius: 12px;
-    padding: 16px 24px;
-    position: fixed;
-    z-index: 9999;
-    left: 50%;
-    bottom: 30px;
-    transform: translateX(-50%);
-    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
-    font-size: 15px;
-    font-weight: 600;
-    opacity: 0;
-    transition: opacity 0.4s ease, bottom 0.4s ease, visibility 0.4s;
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #e74c3c;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 12px;
+  padding: 16px 24px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0;
+  transition:
+    opacity 0.4s ease,
+    bottom 0.4s ease,
+    visibility 0.4s;
 }
 
 #toast-notif.show {
-    visibility: visible;
-    opacity: 1;
-    bottom: 50px;
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
 }

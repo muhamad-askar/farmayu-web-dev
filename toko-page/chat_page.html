@@ -1,63 +1,102 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chat</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="chat_page.css" />
-    <link rel="stylesheet" href="../navigation.css">
-    <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css"> 
+    <link rel="stylesheet" href="../navigation.css" />
+    <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css" />
     <link rel="stylesheet" href="../component/chat-preview/chat-preview.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
-    <div id="pathbar-placeholder"></div> <!-- breadcrumb -->
+    <div id="pathbar-placeholder"></div>
 
     <main>
-            <section class="chat-header">
-                <img id="store-img" src="../asset_foto/placeholder.jpg" alt="store">
-                <div class="header-info">
-                    <div class="row">
-                        <h1 id="chat-nama-toko">Toko Intani</h1>
-                        <a href="#" id="btn-back-toko" class="btn">Kunjungi Toko</a>
+      <section class="chat-header">
+        <img id="store-img" src="../asset_foto/ikon/loak.png" alt="store" />
+        <div class="header-info">
+          <div class="row">
+            <h1 id="chat-nama-toko">Toko Intani</h1>
+            <a href="#" id="btn-back-toko" class="btn">Kunjungi Toko</a>
+          </div>
+          <p>XX pengikut</p>
+        </div>
+      </section>
+
+      <section class="chat-window" id="chat-window">
+        <div class="message-row">
+          <div class="bubble">Ada yang bisa kami bantu?</div>
+          <div id="chat-product-placeholder"></div>
+        </div>
+      </section>
+
+      <div class="chat-container">
+        <div class="chat-input-area">
+            <div class="attachment-wrapper">
+                <div id="paperclip-icon" class="icon-btn">
+                    <img src="../asset_foto/ikon/paperclip.png" id="paperclip" alt="attach">
+                </div>
+
+                <div id="attachment-menu" class="attachment-menu">
+                    <div class="menu-item" onclick="document.getElementById('upload-pdf').click()">
+                        <span class="material-icons" style="color: #f44336;">picture_as_pdf</span>
+                        <span>Dokumen (PDF)</span>
+                        <input type="file" id="upload-pdf" accept=".pdf" hidden>
                     </div>
-                    <p>XX pengikut</p>
+                    
+                    <div class="menu-item" onclick="document.getElementById('upload-img').click()">
+                        <span class="material-icons" style="color: #4caf50;">image</span>
+                        <span>Gambar</span>
+                        <input type="file" id="upload-img" accept="image/*" hidden>
+                    </div>
                 </div>
-            </section>
-
-            <section class="chat-window">
-                <div class="message-row">
-                    <div class="bubble">Ada yang bisa kami bantu?</div>
-                    <div id="chat-product-placeholder"></div>
-                </div>
-            </section>
-            
-            <div class="chat-input-area">
-                <input type="text" placeholder="Tulis pesan...">
-                <button class="btn-send">➤</button>
             </div>
-    </main>
 
+            <input type="text" placeholder="Tulis pesan..." id="user-input" />
+            <img src="../asset_foto/ikon/send.png" id="send" alt="send" onclick="kirimPesan()">
+        </div>
+      </div>     
+    </main>
+     <script src="/global.js"></script>
     <script src="../component/breadcrumb/breadcrumb.js"></script>
     <script src="../component/chat-preview/chat-preview.js"></script>
     <script>
-        // Tunggu semua komponen (navbar/breadcrumb) beres dimuat sama app-loader
-        window.addEventListener("load", function() {
-            const params = new URLSearchParams(window.location.search);
-            
-            // 1. Update Nama Toko di Header
-            const namaToko = params.get('toko');
-            if (namaToko) {
-                document.getElementById('chat-nama-toko').innerText = namaToko.replace(/-/g, ' ');
-            }
+      window.addEventListener("load", function () {
+        const params = new URLSearchParams(window.location.search);
 
-            // 2. Update Link Balik ke Toko (Biar Breadcrumb Gak Reset)
-            const btnBackToko = document.getElementById('btn-back-toko');
-            if (btnBackToko) {
-                // Kita balik ke toko_page sambil bawa semua bekal URL
-                btnBackToko.href = `toko_page.html?${params.toString()}`;
-            }
-        });
+        const namaToko = params.get("toko");
+        if (namaToko) {
+          document.getElementById("chat-nama-toko").innerText = namaToko.replace(/-/g, " ");
+        }
+
+        const btnBackToko = document.getElementById("btn-back-toko");
+        if (btnBackToko) {
+          btnBackToko.href = `toko_page.html?${params.toString()}`;
+        }
+
+        const icon = document.getElementById('paperclip-icon');
+        const menu = document.getElementById('attachment-menu');
+
+        icon.onclick = (e) => {
+            e.stopPropagation();
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        };
+
+        window.onclick = () => {
+            menu.style.display = 'none';
+        };
+      });
+
+      function kirimPesan() {
+        const input = document.getElementById('user-input');
+        if (input.value.trim() !== "") {
+            console.log("Pesan dikirim: " + input.value);
+            input.value = ""; // Reset input
+        }
+      }
     </script>
-</body>
+  </body>
 </html>

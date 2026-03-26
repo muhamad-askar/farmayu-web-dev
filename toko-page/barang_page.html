@@ -16,7 +16,7 @@
     
     <main>
         <section class="card-store">
-            <img id="store-img" src="../asset_foto/" alt="store">
+            <img id="store-img" src="../asset_foto/ikon/loak.png" alt="store">
             <div class="store-info">
                 <h1 id="store-name">Toko Farmayu</h1>
                 <div class="store-button">
@@ -29,50 +29,62 @@
         <section class="review-section">
             <h3>Penilaian Produk</h3>
             <div class="review-card">
-                <img id="user-avatar" src="../asset_foto/placeholder.jpg" alt="user-icon">
+                <img id="user-avatar" src="../asset_foto/ikon/loak.png" alt="user-icon">
                 <div class="review-box">
                     <div class="user-header">
-                        <h1>Bimok</h1>
+                        <h1>Bimok auditorek</h1>
                         <span class="stars">★★★★★</span>
                     </div>
-                    <p>Ini komentar untuk fitur komen pada kolom komentar</p>
+                    <p>Ihhhh umi goy suka</p>
                 </div>
             </div>
             <div class="review-card">
-                <img id="user-avatar" src="../asset_foto/placeholder.jpg" alt="user-icon">
+                <img id="user-avatar" src="../asset_foto/ikon/loak.png" alt="user-icon">
                 <div class="review-box">
                     <div class="user-header">
                         <h1>Lutfi wahyudi</h1>
-                        <span class="stars">★★</span>
+                        <span class="stars">★</span>
                     </div>
-                    <p>Barang jelek tidak sesuai keinginan</p>
+                    <p>Web nya bagus bgt, request 7 bintang asli</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img id="user-avatar" src="../asset_foto/ikon/loak.png" alt="user-icon">
+                <div class="review-box">
+                    <div class="user-header">
+                        <h1>Abdul Natalius Dharma</h1>
+                        <span class="stars">★★★</span>
+                    </div>
+                    <p>Optimis puncak IT ternak lele</p>
                 </div>
             </div>
         </section>
         <div class="chat-input-area">
             <input type="text" placeholder="Tulis komentar...">
-            <button class="btn-send">➤</button>
+            <img src="../asset_foto/ikon/send.png" id="send" alt="send" onclick="kirimPesan()">
         </div>
-    </main>
 
+    </main>
     <script src="/global.js"></script>
     <script src="../component/breadcrumb/breadcrumb.js"></script>
     <script src="../component/product-container/product-container.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Load Navbar manual (tetep ada)
             fetch('../navigation.html')
                 .then(res => res.text())
-                .then(data => document.getElementById('navbar-placeholder').innerHTML = data);
+                .then(data => {
+                    const navbarEl = document.getElementById('navbar-placeholder');
+                    if (navbarEl) navbarEl.innerHTML = data;
+                })
 
-            // --- FIX: OPER SEMUA DATA KE TOKO ---
             const p = new URLSearchParams(window.location.search);
             const btnKeToko = document.getElementById('btn-ke-toko');
             
             if (btnKeToko) {
-                // Ambil semua data produk yang ada di URL sekarang, tambahin info toko
-                const dataProduk = p.toString();
-                btnKeToko.href = `toko_page.html?${dataProduk}&toko=Toko-Intani`;
+                if (!p.has('toko')) {
+                    p.set('toko', 'Toko-Intani');
+                }
+                btnKeToko.href = `toko_page.html?${p.toString()}`;
             }
         });
     </script>

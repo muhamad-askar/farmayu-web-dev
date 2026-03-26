@@ -6,9 +6,7 @@ body{
     font-family: 'DM-sans';
     display: flex; flex-direction: column;
 }
-.chat-product-card{
-    display: flex; flex-direction: column; align-items: flex-end;
-}
+
 .chat-product-preview {
     background-color: white;
     border-radius: 15px;
@@ -16,6 +14,10 @@ body{
     margin: 15px 0 15px auto;
     display: flex; align-items: center;
     max-width: 300px;
+}
+
+.chat-product-card{
+    display: flex; flex-direction: column; align-items: flex-end;
 }
 
 .chat-product-preview img {

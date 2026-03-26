@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'DM-sans';
+  font-family: "DM-sans";
   src: url(../asset_foto/DMSans.ttf);
 }
-*{
+* {
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -13,7 +13,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'DM-sans';
+  font-family: "DM-sans";
 }
 
 .kiri {
@@ -35,14 +35,18 @@ body {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-
 }
 
-.kembali {
+#kembali {
   text-decoration: none;
   color: black;
 }
-
+#kembali:hover {
+  filter: opacity(50%);
+}
+#kembali:active {
+  filter: opacity(100%);
+}
 .kanan {
   flex: 1;
   background-color: white;
@@ -60,21 +64,22 @@ form {
   padding: 20px;
 }
 
-form h2{
+form h2 {
   font-size: 40px;
   margin: 0 0 10px 0;
 }
 
 form input {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   border: none;
   padding: 16px;
   font-size: 16px;
   outline: none;
+  border-radius: 5px;
 }
 
 .tombol-login {
-  background-color: #80FFB2;
+  background-color: #80ffb2;
   border: 1px solid black;
   padding: 15px;
   font-size: 18px;
@@ -82,9 +87,9 @@ form input {
   cursor: pointer;
   margin-top: 10px;
   transition: 0.2s;
+  border-radius: 5px;
 }
 
-.tombol-login:hover{
+.tombol-login:hover {
   background-color: #61e897;
 }
-

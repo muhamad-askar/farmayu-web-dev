@@ -1,45 +1,71 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About</title>
-</head>
-<body>
-<section class="about">
-    <h1>Tentang Kami</h1>
-    <p>Farmayu merupakan website yang dihadirkan untuk membantu meringankan pekerjaan petani di indramayu</p>
-  </section>
- 
-  <section class="story">
-    <h2>Kisah Kami</h2>
-    <p>Farmayu lahir dari fikiran lutfi yang.</p>
-    <p>Paragraf kedua cerita.</p>
-  </section>
- 
-  <section class="team">
-    <h2>Tim Kami</h2>
-    <div class="team-grid">
-      <div class="member">
-        <img src="foto.jpg" alt="Askar"/>
-        <h3>Muhammad Askar Hibatullah</h3>
-        <p>Jabatan</p>
-      </div>
-      <div class="member">
-        <img src="foto.jpg" alt="Nama Anggota 2"/>
-        <h3>Lutfi Rozhi Anggara</h3>
-        <p>Jabatan</p>
-      </div>
-      <div class="member">
-        <img src="foto.jpg" alt="Nama Anggota 3"/>
-        <h3>Bimo Lanang Saputro</h3>
-        <p>Jabatan</p>
-      </div>
-    </div>
-  </section>
- 
-  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="about.css" />
+  </head>
+  <body>
+    <header>
+      <div id="navbar-placeholder"></div>
+    </header>
+    <section class="about">
+      <h1>Tentang Kami</h1>
+      <p>
+        Farmayu merupakan website yang dihadirkan untuk membantu meringankan
+        pekerjaan petani di indramayu
+      </p>
+    </section>
 
-</body>
+    <section class="story">
+      <h2>Kisah Kami</h2>
+      <p>
+        Farmayu lahir dari hasil keinginan kami untuk membantu mempermudah
+        pekerjaan para petani, kami berfikir apa yang bisa dicapai ketika
+        terciptanya ruang untuk menghubungkan petani-petani yang ada di
+        Indramayu, Ruang dimana para petani dapat membeli pasokan benih, dapat
+        mendapat informasi berupa tips-tips artikel yang dapat membangun pertumbuhan para petani lokal.
+      </p>
+      <p>
+        Farmayu berasal dari 2 kata yang berbeda yakni Farm yang berarti
+        pertanian dan Ayu yang merupakan potongan kata dari nama kabupaten
+        Indramayu.
+      </p>
+    </section>
+
+    <section class="team">
+      <h2>Tim Kami</h2>
+      <div class="team-grid">
+        <div class="member">
+          <img src="foto.jpg" alt="Askar" />
+          <h3>Muhammad Askar Hibatullah</h3>
+          <p>Anggota</p>
+        </div>
+        <div class="member">
+          <img src="foto.jpg" alt="Lutfi" />
+          <h3>Lutfi Rozhi Anggara</h3>
+          <p>Anggota</p>
+        </div>
+        <div class="member">
+          <img src="foto.jpg" alt="Bimo" />
+          <h3>Bimo Lanang Saputro</h3>
+          <p>Anggota</p>
+        </div>
+      </div>
+    </section>
+  <footer class="footer">
+    <P> &copy; 2026 Farmayu </p>
+  </footer>
+  <script src="/global.js"></script>
+  <script>
+     document.addEventListener("DOMContentLoaded", function() {
+            fetch('/navigation.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            });
+    });
+  </script>
+  </body>
 </html>

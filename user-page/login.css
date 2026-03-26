@@ -1,8 +1,8 @@
 @font-face {
-  font-family: 'DM-sans';
+  font-family: "DM-sans";
   src: url(../asset_foto/DMSans.ttf);
 }
-*{
+* {
   overflow: hidden;
 }
 body {
@@ -12,7 +12,7 @@ body {
   width: 100%;
   padding: 0;
   margin: 0;
-  font-family: 'DM-sans';
+  font-family: "DM-sans";
 }
 
 .kiri {
@@ -30,12 +30,17 @@ body {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-
 }
 
-.kembali {
+#kembali {
   text-decoration: none;
   color: black;
+}
+#kembali:hover {
+  filter: opacity(50%);
+}
+#kembali:active {
+  filter: opacity(100%);
 }
 
 .logo {
@@ -68,21 +73,22 @@ form {
   padding: 20px;
 }
 
-form h2{
+form h2 {
   font-size: 40px;
   margin: 0 0 10px 0;
 }
 
 form input {
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   border: none;
   padding: 16px;
   font-size: 16px;
   outline: none;
+  border-radius: 5px;
 }
 
 .tombol-login {
-  background-color: #80FFB2;
+  background-color: #80ffb2;
   border: 1px solid black;
   padding: 15px;
   font-size: 18px;
@@ -91,9 +97,10 @@ form input {
   cursor: pointer;
   margin-top: 10px;
   transition: 0.2s;
+  border-radius: 5px;
 }
 
-.tombol-login:hover{
+.tombol-login:hover {
   background-color: #61e897;
 }
 
@@ -109,7 +116,7 @@ form p {
   margin: 10px 0px;
 }
 
-form button[type="button"]{
+form button[type="button"] {
   background-color: white;
   border: 1px solid black;
   font-size: 18px;
@@ -119,87 +126,128 @@ form button[type="button"]{
   transition: 0.2s;
 }
 
-form button[type="button"]:hover{
+form button[type="button"]:hover {
   background-color: #f0f0f0;
 }
 
-.daftar{
+.daftar {
   text-align: center;
   margin-top: 20px;
 }
-.daftar a{
-  color: #1A73E8;
+.daftar a {
+  color: #1a73e8;
   font-weight: bold;
   text-decoration: none;
 }
 
 /* Container Utama lo (pastiin pake flex biar kiri kanan) */
 .container-utama {
-    display: flex;
-    height: 100vh;
+  display: flex;
+  height: 100vh;
 }
 
 /* --- OVERLAY SETTINGS --- */
 .overlay {
-    display: none; /* Sembunyi awal */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Gelapin background */
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
+  display: none; /* Sembunyi awal */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Gelapin background */
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
 }
 
 /* --- BOX POP UP --- */
 .pop-up-google {
-    background: white;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    overflow: hidden;
-    animation: muncul 0.3s ease;
+  background: white;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: muncul 0.3s ease;
 }
 
 @keyframes muncul {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .account-chooser-container {
-    padding: 30px 0 10px;
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px 0 10px;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.google-logo { width: 75px; margin-bottom: 10px; }
-.header h2 { font-size: 22px; font-weight: 500; margin: 5px 0; }
-.header p { font-size: 14px; margin-bottom: 20px; }
+.google-logo {
+  width: 75px;
+  margin-bottom: 10px;
+}
+.header h2 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 5px 0;
+}
+.header p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
 
 /* --- LIST ITEM --- */
-.account-list { border-top: 1px solid #dadce0; }
+.account-list {
+  border-top: 1px solid #dadce0;
+}
 
 .account-item {
-    display: flex;
-    align-items: center;
-    padding: 12px 30px;
-    border-bottom: 1px solid #dadce0;
-    cursor: pointer;
-    transition: 0.2s;
+  display: flex;
+  align-items: center;
+  padding: 12px 30px;
+  border-bottom: 1px solid #dadce0;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.account-item:hover { background-color: #f7f8f8; }
+.account-item:hover {
+  background-color: #f7f8f8;
+}
 
 .avatar {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    margin-right: 15px;
-    object-fit: cover;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
 }
 
-.account-info { text-align: left; }
-.account-info .name { display: block; font-size: 14px; font-weight: 600; color: #3c4043; }
-.account-info .email { font-size: 12px; color: #70757a; }
+.account-info {
+  text-align: left;
+}
+.account-info .name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3c4043;
+}
+.account-info .email {
+  font-size: 12px;
+  color: #70757a;
+}
+
+#lupapw:hover {
+  filter: opacity(50%);
+}
+#lupapw:active {
+  filter: opacity(100%);
+}
+
+#btn-google {
+  border-radius: 5px;
+}

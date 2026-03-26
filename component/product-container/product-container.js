@@ -10,10 +10,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const urlParams = new URLSearchParams(window.location.search);
 
-    // Muat Container Produk
+    //container produk
     await loadComp("../component/product-container/product-container.html", "product-placeholder");
 
-    // Ambil Data dari URL
+    //data URL
     const data = {
         name: urlParams.get("name"),
         price: urlParams.get("price"),

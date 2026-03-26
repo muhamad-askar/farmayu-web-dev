@@ -30,10 +30,13 @@ body {
 .product-info {
     display: flex; flex-direction: column;
 }
+
 .product-info h1 {
     font-size: 25px;
     margin-bottom: 10px;
 }
+
+.product-price{ margin-bottom: 50px;}
 
 .action-button{
     margin-top: auto; display: flex;
@@ -44,8 +47,7 @@ body {
     text-decoration: none;
 }
 
-.product-price{ margin-bottom: 50px;}
-
+/* button */
 .btn {
     background-color: #f5a623; color: white;
     padding: 8px;

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const chatPlaceholder = document.getElementById('chat-product-placeholder');
     const urlParams = new URLSearchParams(window.location.search);
 
-    // Ambil data dari URL
+    //data url
     const pName = urlParams.get('name');
     const pImg = urlParams.get('img');
 
@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(res => res.text())
             .then(html => {
                 chatPlaceholder.innerHTML = html;
-
-                // Isi data ke elemen yang baru di-load
                 document.getElementById('chat-p-name').innerText = decodeURIComponent(pName).replace(/-/g, ' ');
                 document.getElementById('chat-p-img').src = `../asset_foto/alat/${pImg}`;
 

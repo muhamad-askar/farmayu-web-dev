@@ -1,267 +1,361 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Halaman Toko - InTani</title>
-    <link rel="stylesheet" href="toko_page.css">
-    <link rel="stylesheet" href="../katalog-page/katalog.css">
-    <link rel="stylesheet" href="../navigation.css">
-    <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css">
-</head>
-<body>
+    <link rel="stylesheet" href="toko_page.css" />
+    <link rel="stylesheet" href="../katalog-page/katalog.css" />
+    <link rel="stylesheet" href="../navigation.css" />
+    <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css" />
+  </head>
+  <body>
     <div id="navbar-placeholder"></div>
     <div id="pathbar-placeholder"></div>
 
     <main>
-        <section class="store-card">
-            <img id="store-img" src="../asset_foto/placeholder.jpg" alt="store">
-            <div class="store-details">
-                <h1>Toko Farmayu</h1>
-                <p>XX pengikut</p>
-                <div class="store-button">
-                    <button class="btn">Ikuti</button>
-                    <a href="chat_page.html" class="btn">Chat Toko</a>
-                </div>
-            </div>
-        </section>
+      <section class="store-card">
+        <img id="store-img" src="../asset_foto/ikon/loak.png" alt="store" />
+        <div class="store-details">
+          <h1>Toko Farmayu</h1>
+          <p>XX pengikut</p>
+          <div class="store-button">
+            <button class="btn">Ikuti</button>
+            <a href="chat_page.html" class="btn">Chat Toko</a>
+          </div>
+        </div>
+      </section>
 
-        <section>
-            <div class="card-parent">
-                <!-- traktor roda 4 -->
-                <div class="card">
-                    <div class="content-default">
-                        <img src="../asset_foto/alat/traktor4.jpg" alt="img" class="card-img">
-                        <div class="info-default">
-                            <h3 class="nama-barang">Traktor Roda 4</h3>
-                            <p class="info-barang">Mesin penarik beban untuk pengolahan tanah skala luas</p>
-                        </div>
-                    </div>
-                    <div class="content-hover">
-                        <div class="info-hover">
-                            <h3 class="desc-title">Deskripsi</h3>
-                            <p class="desc-text">Kendaraan bermesin diesel membalikkan dan mencacah tanah sebelum memulai masa tanam.</p>
-                        </div>
-                        <a href="../toko-page/chat_page.html?cat=Alat-Pertanian&name=Traktor-Roda-4&price=500.000&img=traktor4.jpg&desc=Traktor-canggih-buat-lahan-luas" class="card-btn">Sewa</a>
-                    </div>
-                </div>
-                <!-- Mesin penggembur tanah -->
-                <div class="card">
-                    <div class="content-default">
-                        <img src="../asset_foto/alat/cultivator.jpg" alt="img" class="card-img">
-                        <div class="info-default">
-                            <h3 class="nama-barang">Mesin Penggembur Tanah</h3>
-                            <p class="info-barang">Mesin kecil untuk penggemburan tanah kering dan pembuatan bedengan</p>
-                        </div>
-                    </div>
-                    <div class="content-hover">
-                        <div class="info-hover">
-                            <h3 class="desc-title">Deskripsi</h3>
-                            <p class="desc-text">Alat yang dilengkapi pisau rotari untuk menghancurkan bongkahan tanah pada lahan.</p>
-                        </div>
-                        <a href="../toko-page/chat_page.html?cat=Alat-Pertanian&name=Mesin-Penggembur-Tanah&img=cultivator.jpg" class="card-btn">Sewa</a>
-                    </div>
-                </div>
-                 <!-- Benih kedelai -->
-                <div class="card">
-                    <div class="content-default">
-                        <img src="../asset_foto/benih/kedelai.jpg" alt="img" class="card-img">
-                        <div class="info-default">
-                            <h3 class="nama-barang">Benih Kedelai Anjasmoro</h3>
-                            <p class="info-barang">Benih kedelai biji besar dengan adaptasi lingkungan yang luas</p>
-                        </div>
-                    </div>
-                    <div class="content-hover">
-                        <div class="info-hover">
-                            <h3 class="desc-title">Deskripsi</h3>
-                            <p class="desc-text">Memiliki ukuran biji yang seragam dan kandungan protein tinggi, cocok untuk industri tempe dan tahu.</p>
-                        </div>
-                        <a href="../toko-page/barang_page.html?cat=Benih&name=Benih-Kedelai&price=500.000&img=kedelai.jpg&desc=Benih" class="card-btn">Beli</a>
-                    </div>
-                </div>
-                <!-- Benih tomat -->
-                <div class="card">
-                    <div class="content-default">
-                        <img src="../asset_foto/benih/tomat.jpg" alt="img" class="card-img">
-                        <div class="info-default">
-                            <h3 class="nama-barang">Benih Tomat Servo F1</h3>
-                            <p class="info-barang">Benih tomat dataran rendah yang tahan terhadap layu bakteri</p>
-                        </div>
-                    </div>
-                    <div class="content-hover">
-                        <div class="info-hover">
-                            <h3 class="desc-title">Deskripsi</h3>
-                            <p class="desc-text">Tomat tipe determinate yang berbuah lebat dengan bentuk buah bulat dan keras.</p>
-                        </div>
-                        <a href="../toko-page/barang_page.html?cat=Benih&name=Benih-Tomat&price=500.000&img=tomat.jpg&desc=Benih" class="card-btn">Beli</a>
-                    </div>
-                </div>
-                <!-- Benih bawang -->
-                <div class="card">
-                    <div class="content-default">
-                        <img src="../asset_foto/benih/bawang.jpg" alt="img" class="card-img">
-                        <div class="info-default">
-                            <h3 class="nama-barang">Biji Bawang Merah (TSS)</h3>
-                            <p class="info-barang">Benih bawang merah dari biji untuk efisiensi biaya tanam</p>
-                        </div>
-                    </div>
-                    <div class="content-hover">
-                        <div class="info-hover">
-                            <h3 class="desc-title">Deskripsi</h3>
-                            <p class="desc-text">True Shallot Seed (TSS) yang bebas virus dan menghasilkan umbi bawang merah berkualitas tinggi.</p>
-                        </div>
-                        <a href="../toko-page/barang_page.html?cat=Benih&name=Benih-Bawang&price=500.000&img=bawang.jpg&desc=Benih" class="card-btn">Beli</a>
-                    </div>
-                </div>
-                <!-- Sayur bayam hijau -->
-                <div class="card">
-                    <div class="content-default">
-                    <img
-                        src="../asset_foto/panen/bayam.jpg"
-                        alt="img"
-                        class="card-img"
-                    />
-                    <div class="info-default">
-                        <h3 class="nama-barang">Sayur Bayam Hijau</h3>
-                        <p class="info-barang">
-                        Sayuran daun segar kaya zat besi, dipanen langsung dari kebun
-                        organik
-                        </p>
-                    </div>
-                    </div>
-                    <div class="content-hover">
-                    <div class="info-hover">
-                        <h3 class="desc-title">Deskripsi</h3>
-                        <p class="desc-text">
-                        Bayam petik kualitas super yang bebas pestisida kimia, sangat
-                        baik untuk konsumsi harian keluarga.
-                        </p>
-                    </div>
-                    <a
-                        href="../toko-page/barang_page.html?cat=Panen&name=Sayur-Bayam-Hijau&price=500.000&img=bayam.jpg&desc=Tanaman"
-                        class="card-btn"
-                        >Beli</a
-                    >
-                    </div>
-                </div>
-                <!-- Alpukat mentega -->
-                <div class="card">
-                    <div class="content-default">
-                    <img
-                        src="../asset_foto/panen/alpukat.jpg"
-                        alt="img"
-                        class="card-img"
-                    />
-                    <div class="info-default">
-                        <h3 class="nama-barang">Alpukat Mentega Super</h3>
-                        <p class="info-barang">
-                        Buah alpukat dengan daging tebal, tekstur legit, dan tanpa
-                        serat
-                        </p>
-                    </div>
-                    </div>
-                    <div class="content-hover">
-                    <div class="info-hover">
-                        <h3 class="desc-title">Deskripsi</h3>
-                        <p class="desc-text">
-                        Kualitas premium dengan biji kecil. Cocok untuk konsumsi
-                        langsung maupun bahan minuman sehat.
-                        </p>
-                    </div>
-                    <a
-                        href="../toko-page/barang_page.html?cat=Panen&name=Alpukat&price=500.000&img=alpukat.jpg&desc=Tanaman"
-                        class="card-btn"
-                        >Beli</a
-                    >
-                    </div>
-                </div>
-                <!-- Wortel -->
-                <div class="card">
-                    <div class="content-default">
-                    <img
-                        src="../asset_foto/panen/wortel.jpg"
-                        alt="img"
-                        class="card-img"
-                    />
-                    <div class="info-default">
-                        <h3 class="nama-barang">Wortel Medan Segar</h3>
-                        <p class="info-barang">
-                        Sayur wortel renyah hasil panen dataran tinggi yang manis
-                        </p>
-                    </div>
-                    </div>
-                    <div class="content-hover">
-                    <div class="info-hover">
-                        <h3 class="desc-title">Deskripsi</h3>
-                        <p class="desc-text">
-                        Wortel berkualitas tinggi yang dicuci bersih, memiliki tekstur
-                        padat dan sangat baik untuk jus atau sup.
-                        </p>
-                    </div>
-                    <a
-                        href="../toko-page/barang_page.html?cat=Panen&name=Wortel&price=500.000&img=wortel.jpg&desc=Tanaman"
-                        class="card-btn"
-                        >Beli</a
-                    >
-                    </div>
-                </div>
-                 <!-- pupuk urea -->
-                <div class="card">
-                    <div class="content-default">
-                        <img src="../asset_foto/pupuk/urea.jpg" alt="img" class="card-img">
-                        <div class="info-default">
-                            <h3 class="nama-barang">Pupuk Urea Nitrogen</h3>
-                            <p class="info-barang">Pupuk tunggal dengan kandungan Nitrogen tinggi untuk pertumbuhan vegetatif</p>
-                        </div>
-                    </div>
-                    <div class="content-hover">
-                        <div class="info-hover">
-                            <h3 class="desc-title">Deskripsi</h3>
-                            <p class="desc-text">Mempercepat pertumbuhan daun dan batang, membuat tanaman terlihat lebih hijau dan rimbun.</p>
-                        </div>
-                        <a href="../toko-page/barang_page.html?cat=Pupuk&name=Pupuk-Urea&price=500.000&img=urea.jpg&desc=Pupuk" class="card-btn">Beli</a>
-                    </div>
-                </div>
-                <!-- Pupuk npk -->
-                <div class="card">
-                    <div class="content-default">
-                        <img src="../asset_foto/pupuk/npk.jpg" alt="img" class="card-img">
-                        <div class="info-default">
-                            <h3 class="nama-barang">Pupuk NPK Mutiara 16-16-16</h3>
-                            <p class="info-barang">Pupuk majemuk seimbang untuk pertumbuhan akar, batang, dan buah</p>
-                        </div>
-                    </div>
-                    <div class="content-hover">
-                        <div class="info-hover">
-                            <h3 class="desc-title">Deskripsi</h3>
-                            <p class="desc-text">Mengandung unsur hara makro yang lengkap untuk menjamin kesehatan tanaman secara menyeluruh.</p>
-                        </div>
-                        <a href="../toko-page/barang_page.html?cat=Pupuk&name=Pupuk-NPK&price=500.000&img=npk.jpg&desc=Pupuk" class="card-btn">Beli</a>
-                    </div>
-                </div>
+      <section>
+        <div class="card-parent">
+          <!-- traktor roda 4 -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/alat/traktor4.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Traktor Roda 4</h3>
+                <p class="info-barang">
+                  Mesin penarik beban untuk pengolahan tanah skala luas
+                </p>
+              </div>
             </div>
-        </section>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  Kendaraan bermesin diesel membalikkan dan mencacah tanah
+                  sebelum memulai masa tanam.
+                </p>
+              </div>
+              <a
+                href="../toko-page/chat_page.html?cat=Alat-Pertanian&name=Traktor-Roda-4&price=500.000&img=traktor4.jpg&desc=Traktor-canggih-buat-lahan-luas"
+                class="card-btn"
+                >Sewa</a
+              >
+            </div>
+          </div>
+          <!-- Mesin penggembur tanah -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/alat/cultivator.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Mesin Penggembur Tanah</h3>
+                <p class="info-barang">
+                  Mesin kecil untuk penggemburan tanah kering dan pembuatan
+                  bedengan
+                </p>
+              </div>
+            </div>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  Alat yang dilengkapi pisau rotari untuk menghancurkan
+                  bongkahan tanah pada lahan.
+                </p>
+              </div>
+              <a
+                href="../toko-page/chat_page.html?cat=Alat-Pertanian&name=Mesin-Penggembur-Tanah&img=cultivator.jpg"
+                class="card-btn"
+                >Sewa</a
+              >
+            </div>
+          </div>
+          <!-- Benih kedelai -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/benih/kedelai.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Benih Kedelai Anjasmoro</h3>
+                <p class="info-barang">
+                  Benih kedelai biji besar dengan adaptasi lingkungan yang luas
+                </p>
+              </div>
+            </div>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  Memiliki ukuran biji yang seragam dan kandungan protein
+                  tinggi, cocok untuk industri tempe dan tahu.
+                </p>
+              </div>
+              <a
+                href="../toko-page/barang_page.html?cat=Benih&name=Benih-Kedelai&price=500.000&img=kedelai.jpg&desc=Benih"
+                class="card-btn"
+                >Beli</a
+              >
+            </div>
+          </div>
+          <!-- Benih tomat -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/benih/tomat.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Benih Tomat Servo F1</h3>
+                <p class="info-barang">
+                  Benih tomat dataran rendah yang tahan terhadap layu bakteri
+                </p>
+              </div>
+            </div>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  Tomat tipe determinate yang berbuah lebat dengan bentuk buah
+                  bulat dan keras.
+                </p>
+              </div>
+              <a
+                href="../toko-page/barang_page.html?cat=Benih&name=Benih-Tomat&price=500.000&img=tomat.jpg&desc=Benih"
+                class="card-btn"
+                >Beli</a
+              >
+            </div>
+          </div>
+          <!-- Benih bawang -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/benih/bawang.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Biji Bawang Merah (TSS)</h3>
+                <p class="info-barang">
+                  Benih bawang merah dari biji untuk efisiensi biaya tanam
+                </p>
+              </div>
+            </div>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  True Shallot Seed (TSS) yang bebas virus dan menghasilkan umbi
+                  bawang merah berkualitas tinggi.
+                </p>
+              </div>
+              <a
+                href="../toko-page/barang_page.html?cat=Benih&name=Benih-Bawang&price=500.000&img=bawang.jpg&desc=Benih"
+                class="card-btn"
+                >Beli</a
+              >
+            </div>
+          </div>
+          <!-- Sayur bayam hijau -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/panen/bayam.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Sayur Bayam Hijau</h3>
+                <p class="info-barang">
+                  Sayuran daun segar kaya zat besi, dipanen langsung dari kebun
+                  organik
+                </p>
+              </div>
+            </div>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  Bayam petik kualitas super yang bebas pestisida kimia, sangat
+                  baik untuk konsumsi harian keluarga.
+                </p>
+              </div>
+              <a
+                href="../toko-page/barang_page.html?cat=Panen&name=Sayur-Bayam-Hijau&price=500.000&img=bayam.jpg&desc=Tanaman"
+                class="card-btn"
+                >Beli</a
+              >
+            </div>
+          </div>
+          <!-- Alpukat mentega -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/panen/alpukat.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Alpukat Mentega Super</h3>
+                <p class="info-barang">
+                  Buah alpukat dengan daging tebal, tekstur legit, dan tanpa
+                  serat
+                </p>
+              </div>
+            </div>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  Kualitas premium dengan biji kecil. Cocok untuk konsumsi
+                  langsung maupun bahan minuman sehat.
+                </p>
+              </div>
+              <a
+                href="../toko-page/barang_page.html?cat=Panen&name=Alpukat&price=500.000&img=alpukat.jpg&desc=Tanaman"
+                class="card-btn"
+                >Beli</a
+              >
+            </div>
+          </div>
+          <!-- Wortel -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/panen/wortel.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Wortel Medan Segar</h3>
+                <p class="info-barang">
+                  Sayur wortel renyah hasil panen dataran tinggi yang manis
+                </p>
+              </div>
+            </div>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  Wortel berkualitas tinggi yang dicuci bersih, memiliki tekstur
+                  padat dan sangat baik untuk jus atau sup.
+                </p>
+              </div>
+              <a
+                href="../toko-page/barang_page.html?cat=Panen&name=Wortel&price=500.000&img=wortel.jpg&desc=Tanaman"
+                class="card-btn"
+                >Beli</a
+              >
+            </div>
+          </div>
+          <!-- pupuk urea -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/pupuk/urea.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Pupuk Urea Nitrogen</h3>
+                <p class="info-barang">
+                  Pupuk tunggal dengan kandungan Nitrogen tinggi untuk
+                  pertumbuhan vegetatif
+                </p>
+              </div>
+            </div>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  Mempercepat pertumbuhan daun dan batang, membuat tanaman
+                  terlihat lebih hijau dan rimbun.
+                </p>
+              </div>
+              <a
+                href="../toko-page/barang_page.html?cat=Pupuk&name=Pupuk-Urea&price=500.000&img=urea.jpg&desc=Pupuk"
+                class="card-btn"
+                >Beli</a
+              >
+            </div>
+          </div>
+          <!-- Pupuk npk -->
+          <div class="card">
+            <div class="content-default">
+              <img
+                src="../asset_foto/pupuk/npk.jpg"
+                alt="img"
+                class="card-img"
+              />
+              <div class="info-default">
+                <h3 class="nama-barang">Pupuk NPK Mutiara 16-16-16</h3>
+                <p class="info-barang">
+                  Pupuk majemuk seimbang untuk pertumbuhan akar, batang, dan
+                  buah
+                </p>
+              </div>
+            </div>
+            <div class="content-hover">
+              <div class="info-hover">
+                <h3 class="desc-title">Deskripsi</h3>
+                <p class="desc-text">
+                  Mengandung unsur hara makro yang lengkap untuk menjamin
+                  kesehatan tanaman secara menyeluruh.
+                </p>
+              </div>
+              <a
+                href="../toko-page/barang_page.html?cat=Pupuk&name=Pupuk-NPK&price=500.000&img=npk.jpg&desc=Pupuk"
+                class="card-btn"
+                >Beli</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="/global.js"></script>
     <script src="../component/breadcrumb/breadcrumb.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('../navigation.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('navbar-placeholder').innerHTML = data;
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("../navigation.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar-placeholder").innerHTML = data;
+          });
         // Taro di script toko_page.html
-        document.addEventListener("DOMContentLoaded", function() {
-            const params = new URLSearchParams(window.location.search);
-            const btnChat = document.querySelector('a[href*="chat_page"]');
-            
-            if (btnChat) {
-                // Bawa semua bekal (cat, name, price, img, toko) ke halaman chat
-                btnChat.href = `chat_page.html?${params.toString()}`;
-            }
+        document.addEventListener("DOMContentLoaded", function () {
+          const params = new URLSearchParams(window.location.search);
+          const btnChat = document.querySelector('a[href*="chat_page"]');
+
+          if (btnChat) {
+            // Bawa semua bekal (cat, name, price, img, toko) ke halaman chat
+            btnChat.href = `chat_page.html?${params.toString()}`;
+          }
         });
-        });
+      });
     </script>
-</body>
+  </body>
 </html>

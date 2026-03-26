@@ -1,91 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="googlepop-up.css">
-  <title>Login - InTani</title>
-</head>
-<body>
-  
-  <div class="kiri">
-    <div> <img src="../asset_foto/ikon/farmayu.png" class="logo"> </div>
-    <div><a class="kembali" href="/index.html">Kembali</a></div>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="login.css" />
+    <title>Login - InTani</title>
+  </head>
+  <body>
+    <div class="kiri">
+      <div><img src="../asset_foto/ikon/farmayu.png" class="logo" /></div>
+      <div><a id="kembali" href="/index.html">Kembali</a></div>
+    </div>
 
-  <div class="kanan">
-    <form id="form-login">
-      <h2>Login</h2>
-      <input type="text" placeholder="Username" required>
-      
-      <div style="position: relative; width: 100%;">
-        <input type="password" id="input-password" placeholder="Password" required style="width: 100%; box-sizing: border-box; padding-right: 40px;">
-      </div>
+    <div class="kanan">
+      <form id="form-login">
+        <h2>Login</h2>
+        <input type="text" placeholder="Username" required />
 
-      <button type="submit" class="tombol-login" style="margin-top: 15px;">Login</button>
-      <a id="lupapw" href="#">lupa password?</a>
-      <p>----atau----</p>
-      <button type="button" id="btn-google">Google</button>
-      <div class="daftar">Baru di InTani? <a href="daftar.html">Daftar</a></div>
-    </form>
-  </div>
-
-  <div id="overlay-google" class="overlay" style="display: none;">
-    <section class="pop-up-google">
-      <div class="account-chooser-container">
-        <div class="header">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="google-logo">
+        <div style="position: relative; width: 100%">
+          <input
+            type="password"
+            id="input-password"
+            placeholder="Password"
+            required
+            style="width: 100%; box-sizing: border-box; padding-right: 40px"
+          />
         </div>
-        <div class="account-list">
-          <div class="account-item">
-            <img src="../asset_foto/placeholder.jpg" alt="Avatar" class="avatar">
-            <div class="account-info">
-              <span class="name">natalius karlos</span>
-              <span class="email">lelelele@gmail.com</span>
+
+        <button type="submit" class="tombol-login" style="margin-top: 15px">
+          Login
+        </button>
+        <a id="lupapw">Lupa password ?</a>
+        <p>----atau----</p>
+        <button type="button" id="btn-google">Google</button>
+        <div class="daftar">
+          Baru di Farmayu ? <a href="daftar.html">Daftar</a>
+        </div>
+      </form>
+    </div>
+
+    <div id="overlay-google" class="overlay" style="display: none">
+      <section class="pop-up-google">
+        <div class="account-chooser-container">
+          <div class="header">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+              alt="Google"
+              class="google-logo"
+            />
+          </div>
+          <div class="account-list">
+            <div class="account-item">
+              <img
+                src="../../asset_foto/ikon/loak.png"
+                alt="Avatar"
+                class="avatar"
+              />
+              <div class="account-info">
+                <span class="name">karlos lo siento</span>
+                <span class="email">lelelele@gmail.com</span>
+              </div>
+            </div>
+            <div class="account-item other-account" id="close-popup">
+              <div class="account-info">
+                <span
+                  class="name"
+                  style="color: #5f6368; text-align: center; width: 100%"
+                  >Batal</span
+                >
+              </div>
             </div>
           </div>
-          <div class="account-item other-account" id="close-popup">
-            <div class="account-info">
-              <span class="name" style="color: #5f6368; text-align: center; width: 100%;">Batal</span>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
-  </div>
+      </section>
+    </div>
 
-  <script>
+    <script>
+      const formLogin = document.getElementById("form-login");
+      const btnGoogle = document.getElementById("btn-google");
+      const overlay = document.getElementById("overlay-google");
+      const btnClose = document.getElementById("close-popup");
+      const togglePassword = document.getElementById("toggle-password");
+      const inputPassword = document.getElementById("input-password");
 
-    const formLogin = document.getElementById("form-login");
-    const btnGoogle = document.getElementById('btn-google');
-    const overlay = document.getElementById('overlay-google');
-    const btnClose = document.getElementById('close-popup');
-    const togglePassword = document.getElementById("toggle-password");
-    const inputPassword = document.getElementById("input-password");
-
-
-    formLogin.addEventListener("submit", function(e) {
+      formLogin.addEventListener("submit", function (e) {
         e.preventDefault();
         const inputs = formLogin.querySelectorAll("input");
         const username = inputs[0].value;
         const password = inputs[1].value;
         const akunTersimpan = JSON.parse(localStorage.getItem("akunInTani"));
 
-        if (akunTersimpan && username === akunTersimpan.username && password === akunTersimpan.password) {
-            localStorage.setItem("sesiInTani", username);
-            window.location.href = "../index.html";
+        if (
+          akunTersimpan &&
+          username === akunTersimpan.username &&
+          password === akunTersimpan.password
+        ) {
+          localStorage.setItem("sesiInTani", username);
+          window.location.href = "../index.html";
         } else {
         }
-    });
+      });
 
-
-    btnGoogle.onclick = () => overlay.style.display = 'flex';
-    btnClose.onclick = () => overlay.style.display = 'none';
-    window.onclick = (event) => {
-        if (event.target == overlay) overlay.style.display = 'none';
-    }
-  </script>
-
-</body>
+      btnGoogle.onclick = () => (overlay.style.display = "flex");
+      btnClose.onclick = () => (overlay.style.display = "none");
+      window.onclick = (event) => {
+        if (event.target == overlay) overlay.style.display = "none";
+      };
+    </script>
+  </body>
 </html>
