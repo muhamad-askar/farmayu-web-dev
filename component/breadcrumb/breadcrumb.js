@@ -26,7 +26,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     // 2. LOGIKA PATH (Deteksi Sub-folder)
     // Cek apakah URL saat ini mengandung nama folder sub
     const path = window.location.pathname;
-    const isSub = path.includes("/katalog-page/") || path.includes("/toko-page/") || path.includes("/keranjang-page/");
+    const isSub = path.includes("/katalog-page/") || path.includes("/toko-page/") || path.includes("/transaksi-page/") || path.includes("/user-page/");
+
     const prefix = isSub ? "../" : "";
 
     // 3. TAMBAHKAN IKON
@@ -77,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             // Atur HREF berdasarkan key
             if (key === "cat") item.href = `${prefix}katalog-page/katalog_${value.toLowerCase()}.html?cat=${value}`;
-            else if (key === "cart") item.href = `${prefix}keranjang-page/keranjang.html?cart=true`;
+            else if (key === "cart") item.href = `${prefix}transaksi-page/keranjang.html?cart=true`;
             else if (key === "checkout") item.href = `checkout.html?${currentData.toString()}`;
             else if (key === "name") {
                 const b = new URLSearchParams(window.location.search);
