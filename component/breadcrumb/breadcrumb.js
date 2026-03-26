@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     // 4. LINK HOME
     const homeItem = document.createElement("a");
     homeItem.innerText = "Home";
-    homeItem.href = `${prefix}home.html`;
+    homeItem.href = `${prefix}index.html`;
     homeItem.className = "breadcrumb-item";
     listContainer.appendChild(homeItem);
 

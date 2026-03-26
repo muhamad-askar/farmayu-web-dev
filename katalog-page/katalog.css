@@ -57,9 +57,14 @@ html,body{
     position: absolute;
     bottom: 30px; left: 30%; transform: translateX(-50%);
     padding: 5px 25px; border-radius: 5px;
-    background-color:#f5a623;
-
+    background-color:#f5a623; color: white;
     text-decoration: none;
+}
+.card-btn:hover{
+    background-color: #ffb031;
+}
+.card-btn:active{
+    background-color: #b57414;
 }
 .card:hover .content-hover{
     opacity: 1;
