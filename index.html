@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farmayu - Full Width Version</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="./home.css">
+    <link rel="stylesheet" href="./navigation.css">
 </head>
 <body>
 
@@ -71,19 +71,19 @@
 
 <section class="container cat-section">
   <div class="categories">
-    <a class="cat-card" href="katalog-page/katalog_pupuk.html?cat=Pupuk">
+    <a class="cat-card" href="./katalog-page/katalog_pupuk.html?cat=Pupuk">
       <div class="cat-icon">🌿</div>
       <span>Pupuk</span>
     </a>
-    <a class="cat-card" href="katalog-page/katalog_benih.html?cat=Benih">
+    <a class="cat-card" href="./katalog-page/katalog_benih.html?cat=Benih">
       <div class="cat-icon">🌾</div>
       <span>Benih</span>
     </a>
-    <a class="cat-card" href="katalog-page/katalog_panen.html?cat=Panen">
+    <a class="cat-card" href="./katalog-page/katalog_panen.html?cat=Panen">
       <div class="cat-icon">🌱</div>
       <span>Tanaman</span>
     </a>
-    <a class="cat-card" href="katalog-page/katalog_alat-pertanian.html?cat=Alat-Pertanian">
+    <a class="cat-card" href="./katalog-page/katalog_alat-pertanian.html?cat=Alat-Pertanian">
       <div class="cat-icon">🔧</div>
       <span>Alat</span>
     </a>
@@ -218,12 +218,12 @@
 <script src="./global.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-            fetch('navigation.html')
+            fetch('./navigation.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar-placeholder').innerHTML = data;
             })
-            fetch('../footer.html')
+            fetch('./footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
@@ -249,6 +249,36 @@
   dots.forEach((d, i) => d.onclick = () => { goTo(i); resetAuto(); });
  
   startAuto();
+
+  const tombolPaket = document.querySelectorAll('.paket-box');
+tombolPaket.forEach(paket => {
+ paket.addEventListener('click', function(e) {
+e.preventDefault(); 
+
+const namaPaket = this.querySelector('h3').innerText;
+
+
+const imgEl = this.querySelector('.img-container img');
+ const gambarPaket = imgEl ? imgEl.src : './asset_foto/ikon/paket.png';
+
+
+ const hargaKasar = this.querySelector('.modal-price').innerText;
+
+
+ const angkaAwal = parseInt(hargaKasar.replace(/[^0-9]/g, ''));
+ const hargaAsli = angkaAwal * 1000;
+const hargaFormat = "Rp " + hargaAsli.toLocaleString("id-ID");
+
+const dataBeliPaket = [{
+ nama: namaPaket,
+gambar: gambarPaket,
+ jumlah: 1,
+ totalHarga: hargaFormat
+}];
+
+localStorage.setItem("keranjangInTani", JSON.stringify(dataBeliPaket));
+ window.location.href = this.getAttribute('href'); });
+});
 </script>
 </body>
 </html>

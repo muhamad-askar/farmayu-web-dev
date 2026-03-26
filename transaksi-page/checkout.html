@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout - InTani</title>
-    <link rel="stylesheet" href="checkout.css" />
+    <link rel="stylesheet" href="../transaksi-page/checkout.css" />
     <link rel="stylesheet" href="../component/breadcrumb/breadcrumb.css" />
   </head>
   <body>
@@ -88,7 +88,7 @@
       </div>
     </div>
 
-    <script src="/global.js"></script>
+    <script src="../global.js"></script>
     <script src="../component/breadcrumb/breadcrumb.js"></script>
     <script>
       const dataBelanja =
@@ -176,26 +176,24 @@
         }
       });
 
-
-
-     const btnBayar = document.getElementById("btn-bayar");
+      const btnBayar = document.getElementById("btn-bayar");
       const pesanError = document.getElementById("pesan-error");
       const popupSukses = document.getElementById("popup-sukses");
       const noInvoice = document.getElementById("no-invoice");
       const metodePembayaran = document.getElementById("metode-pembayaran");
 
       function showToast(pesan) {
-          let toast = document.getElementById("toast-notif");
-          if (!toast) {
-              toast = document.createElement("div");
-              toast.id = "toast-notif";
-              document.body.appendChild(toast);
-          }
-          toast.innerText = pesan;
-          toast.classList.add("show");
-          setTimeout(function() {
-              toast.classList.remove("show");
-          }, 3000);
+        let toast = document.getElementById("toast-notif");
+        if (!toast) {
+          toast = document.createElement("div");
+          toast.id = "toast-notif";
+          document.body.appendChild(toast);
+        }
+        toast.innerText = pesan;
+        toast.classList.add("show");
+        setTimeout(function () {
+          toast.classList.remove("show");
+        }, 3000);
       }
 
       btnBayar.addEventListener("click", function () {
@@ -203,8 +201,11 @@
           showToast("⚠️ Gagal: Belum ada barang di keranjang!");
           return;
         }
-        
-        if (teksAlamat.innerText.trim() === "" || teksAlamat.innerText === "-") {
+
+        if (
+          teksAlamat.innerText.trim() === "" ||
+          teksAlamat.innerText === "-"
+        ) {
           pesanError.style.display = "block";
           showToast("⚠️ Silakan isi alamat pengiriman!");
           return;
@@ -221,7 +222,7 @@
         const randomInv = Math.floor(10000 + Math.random() * 90000);
         noInvoice.innerText = "INV-" + randomInv;
         popupSukses.style.display = "flex";
-        
+
         localStorage.removeItem("keranjangInTani");
       });
     </script>

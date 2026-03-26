@@ -13,33 +13,28 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   const urlParams = new URLSearchParams(window.location.search);
 
+  // 🔥 ROOT PATH (AMAN DEPLOY)
+  const prefix = "/";
 
-  await loadComp("../navigation.html", "navbar-placeholder");
+  // LOAD COMPONENT
+  await loadComp(`${prefix}navigation.html`, "navbar-placeholder");
   await loadComp(
-    "../component/breadcrumb/breadcrumb.html",
-    "pathbar-placeholder",
+    `${prefix}component/breadcrumb/breadcrumb.html`,
+    "pathbar-placeholder"
   );
 
   const listContainer = document.getElementById("breadcrumb-list");
   if (!listContainer) return;
   listContainer.innerHTML = "";
 
-
-  const path = window.location.pathname;
-  const isSub =
-    path.includes("/katalog-page/") ||
-    path.includes("/toko-page/") ||
-    path.includes("/transaksi-page/") ||
-    path.includes("/user-page/") ||
-    path.includes("/chat-page/");
-  const prefix = isSub ? "../" : "";
-
+  // LOGO
   const logoIkon = document.createElement("img");
   logoIkon.id = "ikon";
   logoIkon.src = `${prefix}asset_foto/ikon/logo.png`;
   logoIkon.alt = "home-icon";
   listContainer.appendChild(logoIkon);
 
+  // HOME
   const homeItem = document.createElement("a");
   homeItem.innerText = "Home";
   homeItem.href = `${prefix}index.html`;
@@ -52,8 +47,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   else if (urlParams.has("trx")) urutanTampil.push("trx");
   else if (urlParams.has("toko")) {
     urutanTampil.push("toko");
-    if (path.includes("chat_page")) urutanTampil.push("chat");
+    if (window.location.pathname.includes("chat_page"))
+      urutanTampil.push("chat");
   }
+
   urutanTampil.forEach((key) => {
     let value = urlParams.get(key);
     if (key === "cart") value = "Keranjang";
@@ -71,13 +68,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       const currentData = new URLSearchParams(window.location.search);
 
-
       if (key === "cat")
         item.href = `${prefix}katalog-page/katalog_${value.toLowerCase()}.html?cat=${value}`;
       else if (key === "cart")
         item.href = `${prefix}transaksi-page/keranjang.html?cart=true`;
       else if (key === "checkout")
-        item.href = `checkout.html?${currentData.toString()}`;
+        item.href = `${prefix}transaksi-page/checkout.html?${currentData.toString()}`;
       else if (key === "name") {
         const b = new URLSearchParams(window.location.search);
         ["toko", "trx", "chat"].forEach((k) => b.delete(k));
@@ -89,17 +85,18 @@ document.addEventListener("DOMContentLoaded", async function () {
       } else if (key === "trx")
         item.href = `${prefix}transaksi-page/${value.toLowerCase()}.html?${currentData.toString()}`;
       else if (key === "chat")
-        item.href = `chat_page.html?${currentData.toString()}`;
-
+        item.href = `${prefix}toko-page/chat_page.html?${currentData.toString()}`;
 
       const paramsPresent = urutanTampil.filter(
-        (k) => urlParams.has(k) || k === "chat",
+        (k) => urlParams.has(k) || k === "chat"
       );
+
       if (key === paramsPresent[paramsPresent.length - 1]) {
         item.href = "#";
         item.style.pointerEvents = "none";
         item.style.fontWeight = "bold";
       }
+
       listContainer.appendChild(item);
     }
   });

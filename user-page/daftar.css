@@ -78,6 +78,10 @@ form input {
   border-radius: 5px;
 }
 
+.pw {
+ width: 100%; box-sizing: border-box; padding-right: 40px;
+}
+
 .tombol-login {
   background-color: #80ffb2;
   border: 1px solid black;
@@ -85,7 +89,7 @@ form input {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 15px;
   transition: 0.2s;
   border-radius: 5px;
 }

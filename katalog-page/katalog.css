@@ -18,7 +18,7 @@ body {
 .card-parent {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  row-gap: 70px;
+  row-gap: 60px;
   padding-top: 20px;
   padding-bottom: 40px;
   align-items: center;
