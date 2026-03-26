@@ -104,3 +104,19 @@ function initSearch() {
 }
 
 document.addEventListener("DOMContentLoaded", loadLayout);
+
+
+setTimeout(() => {
+   
+    const linkProfil = document.querySelector('.nav-icons a[href*="login.html"]');
+    
+   
+    const sesiAktif = localStorage.getItem("sesiInTani");
+
+    if (linkProfil && sesiAktif) {
+      
+        linkProfil.href = "/user-page/user.html";
+        
+       
+    }
+}, 500);

@@ -4,24 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="daftar.css">
-  <title>Document</title>
+  <title>Daftar - InTani</title>
 </head>
 <body>
   
 <div class="kiri">
   <div> <img src="../asset_foto/ikon/logo-intani.png" class="logo"> </div>
-  <div>Kembali</div>
+  <div style="cursor: pointer;" onclick="window.history.back()">Kembali</div>
 </div>
 
 <div class="kanan">
-  
-  <form>
+  <form id="form-daftar">
     <h2>Daftar</h2>
     <input type="text" placeholder="Username" required>
-     <input type="password" placeholder="Password" required>
-     <button type="submit" class="tombol-login">Login</button>
+    
+    <div style="position: relative; width: 100%;">
+      <input type="password" id="input-password-daftar" placeholder="Password" required style="width: 100%; box-sizing: border-box; padding-right: 40px;">
+      <span id="toggle-password-daftar" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer; font-size: 18px; user-select: none;">👁️</span>
+    </div>
+
+    <button type="submit" class="tombol-login" style="margin-top: 15px;">Daftar</button>
   </form>
 </div>
+
+
+</body>
+</html>
+<script>
+  const formDaftar = document.getElementById("form-daftar");
+  formDaftar.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const inputs = formDaftar.querySelectorAll("input");
+      const username = inputs[0].value;
+      const password = inputs[1].value;
+      
+      localStorage.setItem("akunInTani", JSON.stringify({ username: username, password: password }));
+      alert("Pendaftaran berhasil! Silakan login.");
+      window.location.href = "login.html";
+  });
+
+  const toggleDaftar = document.getElementById("toggle-password-daftar");
+  const inputDaftar = document.getElementById("input-password-daftar");
+  
+  toggleDaftar.addEventListener("click", function () {
+    if (inputDaftar.type === "password") {
+      inputDaftar.type = "text";
+      toggleDaftar.innerText = "🙈";
+    } else {
+      inputDaftar.type = "password";
+      toggleDaftar.innerText = "👁️";
+    }
+  });
+
+
+  formDaftar.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const inputs = formDaftar.querySelectorAll("input");
+      const username = inputs[0].value;
+      const password = inputs[1].value;
+      
+      localStorage.setItem("akunInTani", JSON.stringify({ username: username, password: password }));
+      alert("Pendaftaran berhasil! Silakan login.");
+      window.location.href = "login.html";
+  });
+</script>
 
 </body>
 </html>

@@ -1,30 +1,23 @@
+
 *, *::before, *::after { 
-  margin: 0; padding: 0; box-sizing: border-box;
-  overflow-x: hidden;
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
   background-color: #EBE3D5;
   color: #333;
-}
-.bar {
-  padding: 4px 15px;
-  background-color: white;
-  margin-left: 15px;
-  margin-right: 15px;
-  display: flex;
-  align-items: center;
-}
-.ikon img {margin-left: 0px;}
-
-.bar2{
-  margin-left: 20px;
+  overflow-x: hidden; 
 }
 
 .main-wrapper {
   max-width: 1100px;
   margin: 15px auto;
+  padding: 0 15px;
 }
+
 
 .box {
   background-color: white;
@@ -43,11 +36,13 @@ body {
   border: 1.5px solid #000;
   border-radius: 50%;
   background-color: #f9f9f9;
+  overflow: hidden; 
 }
 
 .info-profil h1{
   font-size: 36px;
-  text-transform: lowercase;
+  font-weight: 700;
+  text-transform: lowercase; 
 }
 
 .info-profil p{
@@ -55,7 +50,6 @@ body {
   color: #555;
   display: flex;
   align-items: center;
-
 }
 
 .toko {
@@ -67,10 +61,13 @@ body {
   border-radius: 2px;
 }
 
+
 .area-tengah{
   display: flex;
   gap: 20px;
+  padding-bottom: 50px;
 }
+
 
 .tengah-kiri {
   background-color: white;
@@ -84,20 +81,21 @@ body {
 
 .samping li{
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 20px ;
   cursor: pointer;
   color: #888;
   transition: color 0.3s;
 }
 
-.samping li:first-child {
+.samping li.aktif {
   color: #000;
 }
 
 .samping li:hover{
   color: #000;
 }
+
 
 .profil-deskripsi{
   background-color: white;
@@ -107,79 +105,127 @@ body {
 
 .profil-deskripsi h2 {
   font-size: 32px;
+  font-weight: 700;
   margin-bottom: 35px;
 }
 
-.form{
+.form-container{
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
 }
 
-.form2{
+.form-inputan{
   flex: 2;
 }
 
+
 .form-group{
   display: flex;
+  align-items: flex-start; 
   margin-bottom: 18px;
 }
 
 .form-group label{
   width: 100px;
   color: #999;
-  padding-top: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 10px; 
 }
 
-.field {
-  background: #EEEEEE;
+.form-inputan input, 
+.form-inputan textarea {
   flex: 1;
-  padding: 10px;
+  background: #EEEEEE;
+  border: 1px solid #EEEEEE;
+  padding: 10px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
 }
 
-.field.textarea {
-   height: 100px;
+.form-inputan input:focus, 
+.form-inputan textarea:focus {
+  background: #ffffff;
+  border-color: #89C4F4; 
 }
 
-.btn-simpan{
+.form-inputan textarea {
+  resize: none; 
+}
+
+
+.tombol-aksi {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  margin-left: 100px; 
+}
+
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-save {
   background-color: #89C4F4;
   color: white;
-  border: none;
-  padding: 10px 40px;
-  margin-left: 100px;
-  cursor: pointer;}
-
-.btn-simpan:hover {
-    background-color: #71b1e6;
+}
+.btn-save:hover {
+  background-color: #71b1e6;
 }
 
+.btn-logout {
+  background-color: #e74c3c;
+  color: white;
+}
+.btn-logout:hover {
+  background-color: #c0392b;
+}
+
+
 .photo-edit {
-    flex: 1; text-align: center;;
+  flex: 1; 
+  text-align: center;
+  padding-top: 10px;
 }
 
 .avatar-mid {
-   width: 110px;
+  width: 110px;
   height: 110px;
-  border: 1px solid #000;
+  border: 1.5px solid #000;
   border-radius: 50%;
-  margin: 0 auto 10px;
+  margin: 0 auto 15px;
+  overflow: hidden; 
 }
 
 .avatar-mid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .btn-ganti {
-    background: white;
-    border: 1px solid #000;
-    padding: 6px 15px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background 0.2s;
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s;
 }
 
 .btn-ganti:hover {
-    background: #f0f0f0;
+  color: #000;
+  text-decoration: underline; 
 }
