@@ -105,7 +105,10 @@ function initSearch() {
 
 document.addEventListener("DOMContentLoaded", loadLayout);
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> a5ed17d49baddba86bb6827a87a37d27b7d4d7f1
 setTimeout(() => {
    
     const linkProfil = document.querySelector('.nav-icons a[href*="login.html"]');
